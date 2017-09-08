@@ -2,11 +2,52 @@ name: SBRankup
 main: net.derpz.sbrankup.SBRankup
 version: 1.0-SNAPSHOT
 author: xiurobert <abs12>
-
+depend: [Vault, ASkyBlock]
 
 commands:
   sbrankup:
     description: Attempts a rankup for you
-    usage: /sbrankup
+    usage: /<command>
     permission: sbrankup.rankup
-    permission-message: You don't have permission to rankup!
+    #permission-message: You are missing the permission <permission>!
+
+  sbsetrank:
+    description: Sets the rank of a player.
+    usage: /<command> [player] [rank]
+    permission: sbrankup.setrank
+    #permission-message:
+  sbranklist:
+    description: Views all the ranks the player has access to
+    usage: /<command>
+
+permissions:
+  sbrankup.player.*:
+    description: Gives access to all player-usable commands:
+    children:
+      sbrankup.rankup: true
+      sbrankup.ranklist: true
+
+
+  sbrankup.admin.*:
+    description: Gives access to all admin-usable commands:
+    children:
+      sbrankup.setrank: true
+      sbrankup.reload: true
+
+
+  sbrankup.rankup:
+    description: Allows your to rankup.
+    default: true
+
+  sbrankup.ranklist:
+    description: Allows you to view the rank list
+    default: true
+
+  sbrankup.setrank:
+    description: Allows you to set the rank of another player
+    default: op
+
+  sbrankup.reload:
+    description: Reloads the configuration from the file
+    default: op
+

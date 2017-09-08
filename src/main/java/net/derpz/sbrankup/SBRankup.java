@@ -6,7 +6,7 @@ package net.derpz.sbrankup;
 
 import com.wasteofplastic.askyblock.ASkyBlockAPI;
 import com.wasteofplastic.askyblock.util.VaultHelper;
-import net.derpz.sbrankup.commands.RankupCommandExecutor;
+import net.derpz.sbrankup.commands.RankupCommand;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.PluginManager;
@@ -37,7 +37,7 @@ public class SBRankup extends JavaPlugin {
 
         ASkyBlockAPI a = ASkyBlockAPI.getInstance();
 
-        this.getCommand("sbrankup").setExecutor(new RankupCommandExecutor(this));
+        this.getCommand("sbrankup").setExecutor(new RankupCommand(this));
         this.getCommand("sblistranks"); //TODO GUI for ranklist
     }
 

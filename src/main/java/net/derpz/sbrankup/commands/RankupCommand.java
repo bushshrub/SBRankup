@@ -11,13 +11,13 @@ import org.bukkit.entity.Player;
 import java.util.UUID;
 
 /**
- * Created by Robert on 06-Sep-17.
+ * Created by xiurobert on 06-Sep-17.
  */
-public class RankupCommandExecutor implements CommandExecutor {
+public class RankupCommand implements CommandExecutor {
 
     private final SBRankup plugin;
 
-    public RankupCommandExecutor(SBRankup plugin) {
+    public RankupCommand(SBRankup plugin) {
         this.plugin = plugin;
     }
 
@@ -29,13 +29,13 @@ public class RankupCommandExecutor implements CommandExecutor {
                 if (args.length != 0) {
                     sender.sendMessage(ChatColor.RED.toString() + ChatColor.BOLD + "You shouldn't give any" +
                             "inputs to this command!");
-                    return false;
+                    return true;
                 }
+
                 UUID uuid = ((Player) sender).getUniqueId();
-
                 ASkyBlockAPI asbapi = ASkyBlockAPI.getInstance();
-
                 asbapi.calculateIslandLevel(uuid);
+                asbapi.getIslandLevel(uuid);
 
 
 
