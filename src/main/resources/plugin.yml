@@ -1,3 +1,12 @@
 name: SBRankup
 main: net.derpz.sbrankup.SBRankup
 version: 1.0-SNAPSHOT
+author: xiurobert <abs12>
+
+
+commands:
+  sbrankup:
+    description: Attempts a rankup for you
+    usage: /sbrankup
+    permission: sbrankup.rankup
+    permission-message: You don't have permission to rankup!
