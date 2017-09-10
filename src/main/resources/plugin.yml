@@ -22,14 +22,14 @@ commands:
 
 permissions:
   sbrankup.player.*:
-    description: Gives access to all player-usable commands:
+    description: Gives access to all player-usable commands
     children:
       sbrankup.rankup: true
       sbrankup.ranklist: true
 
 
   sbrankup.admin.*:
-    description: Gives access to all admin-usable commands:
+    description: Gives access to all admin-usable commands
     children:
       sbrankup.setrank: true
       sbrankup.reload: true

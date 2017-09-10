@@ -1,0 +1,25 @@
+# Rankups configuration
+
+# Example
+
+# rankups:
+#   A:
+#     nextrank: B # Put the name of the next rank in here
+#     actions: # Actions that will be performed on rankup
+#       - <addgroup> B
+
+
+# If this looks similar to EZRanksLite/Pro, yes, I got my idea from there
+# Action list:
+# <addgroup> [group] (world) - adds the player to a permission group
+# <removegroup> [group] (world) - removes the player from a permissions group
+# <addpermission> [permission] (world) - adds a permission
+
+
+rankups:
+  A:
+    nextrank: B
+    actions:
+      - <addgroup> B
+      - <removegroup> A
+      - <addpermission> some.permission
