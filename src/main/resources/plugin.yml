@@ -19,6 +19,7 @@ commands:
   sbranklist:
     description: Views all the ranks the player has access to
     usage: /<command>
+    permission: sbrankup.ranklist
 
 permissions:
   sbrankup.player.*:

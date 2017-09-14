@@ -10,6 +10,8 @@ import net.derpz.sbrankup.commands.RankListCommand;
 import net.derpz.sbrankup.commands.RankupCommand;
 
 import net.derpz.sbrankup.commands.SetRankCommand;
+import net.derpz.sbrankup.listeners.IslandLevelListener;
+import net.milkbowl.vault.chat.Chat;
 import org.bukkit.ChatColor;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -30,36 +32,45 @@ public class SBRankup extends JavaPlugin {
     public Permission perms = null;
     private FileConfiguration rankups = null;
     private File rankupsYml= null;
-    public String PluginPrefix = ChatColor.GRAY + "["+ ChatColor.GREEN + "SBR" + ChatColor.GRAY + "] ";
+    public String PluginPrefix = null;
 
     @Override
     public void onEnable() {
+
+
 
         PluginManager plmgr = getServer().getPluginManager();
 
         Plugin asb = plmgr.getPlugin("ASkyBlock");
         ConsoleCommandSender console = getServer().getConsoleSender();
 
+        PluginPrefix = ChatColor.translateAlternateColorCodes('&',
+                getConfig().getString("plugin-prefix"));
+
         if (asb == null) {
 
-            console.sendMessage(PluginPrefix + ChatColor.RED.toString() + "ASkyBlock was NOT detected. " +
+            console.sendMessage(PluginPrefix + ChatColor.RED.toString() + " ASkyBlock was NOT detected. " +
                     "Disabling plugin");
             plmgr.disablePlugin(this);
         } else {
-            console.sendMessage(PluginPrefix + ChatColor.GREEN.toString() + "Linking to ASkyBlock!");
+            console.sendMessage(PluginPrefix + ChatColor.GREEN.toString() + " Linking to ASkyBlock!");
 
             if (!setupPermissions()) {
-                console.sendMessage(PluginPrefix + ChatColor.RED.toString() + "Can't link Vault for permissions! Disabling" +
-                        "plugin");
+                console.sendMessage(PluginPrefix + ChatColor.RED.toString() + " Can't link Vault for permissions!" +
+                        " Disabling plugin");
                 plmgr.disablePlugin(this);
             } else {
-                this.saveDefaultConfig();
+                saveDefaultConfig();
                 getRankups();
 
-                this.getCommand("sbrankup").setExecutor(new RankupCommand(this));
-                this.getCommand("sbsetrank").setExecutor(new SetRankCommand(this));
-                this.getCommand("sblistranks").setExecutor(new RankListCommand(this)); //TODO GUI for ranklist
-                plmgr.registerEvents(new RankupCommand(this), this);
+
+
+                getCommand("sbrankup").setExecutor(new RankupCommand(this));
+                getCommand("sbsetrank").setExecutor(new SetRankCommand(this));
+                //getCommand("sblistranks").setExecutor(new RankListCommand(this)); //TODO GUI for ranklist
+
+
+                new IslandLevelListener(this);
             }
         }
 
@@ -79,9 +90,7 @@ public class SBRankup extends JavaPlugin {
     }
 
     public void reloadRankups() {
-        if (rankupsYml == null) {
-            rankupsYml = new File(getDataFolder(), "rankups.yml");
-        }
+        saveDefaultRankups();
 
         rankups = YamlConfiguration.loadConfiguration(rankupsYml);
         try {
@@ -111,7 +120,7 @@ public class SBRankup extends JavaPlugin {
         }
 
         if (!rankupsYml.exists()) {
-            this.saveResource("rankups.yml", false);
+            saveResource("rankups.yml", false);
         }
     }
 }

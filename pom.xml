@@ -23,6 +23,9 @@
 
         </plugins>
 
+        <defaultGoal>install</defaultGoal>
+
+
 
     </build>
 

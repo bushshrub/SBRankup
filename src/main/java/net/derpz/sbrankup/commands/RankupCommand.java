@@ -31,7 +31,6 @@ public class RankupCommand implements CommandExecutor, Listener {
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        if (cmd.getName().equalsIgnoreCase("sbrankup")) {
             if (sender instanceof Player) {
 
                 if (args.length != 0) {
@@ -55,20 +54,8 @@ public class RankupCommand implements CommandExecutor, Listener {
                 return true;
             }
 
-        }
-        return false;
     }
 
-    @EventHandler(priority = EventPriority.LOW)
 
-    public void onIslandLevelCalc(IslandPostLevelEvent e) {
-
-        if (Bukkit.getOfflinePlayer(e.getPlayer()) != null && Bukkit.getOfflinePlayer(e.getPlayer()).isOnline()) {
-            Bukkit.getPlayer(e.getPlayer()).sendMessage(ChatColor.GREEN.toString() + "Ok! Your island level" +
-                    "was calculated, please run the command you had just ran again!");
-        }
-
-
-    }
 
 }
