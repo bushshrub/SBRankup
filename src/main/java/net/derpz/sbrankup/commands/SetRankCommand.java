@@ -18,9 +18,9 @@ public class SetRankCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
         if (args.length != 2) {
-            sender.sendMessage(this.plugin.PluginPrefix + ChatColor.RED.toString() +
+            sender.sendMessage(this.plugin.getPluginPrefix() + ChatColor.RED.toString() +
                     "You need to provide 2 inputs to this command!");
-            sender.sendMessage(this.plugin.PluginPrefix + ChatColor.YELLOW +
+            sender.sendMessage(this.plugin.getPluginPrefix() + ChatColor.YELLOW +
             "Usage: " + cmd.getName() + " <player> <rank>");
             return false;
         } else {
@@ -31,7 +31,7 @@ public class SetRankCommand implements CommandExecutor {
             } else {
                 sender.sendMessage("Nothing yet");
             }
-            sender.sendMessage(this.plugin.PluginPrefix + ChatColor.GREEN.toString() +
+            sender.sendMessage(this.plugin.getPluginPrefix() + ChatColor.GREEN.toString() +
                     "Set the rank of " + args[0] + "to: " + args[1]);
             return true;
         }

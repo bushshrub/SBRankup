@@ -34,7 +34,7 @@ public class RankupCommand implements CommandExecutor, Listener {
             if (sender instanceof Player) {
 
                 if (args.length != 0) {
-                    sender.sendMessage(this.plugin.PluginPrefix +
+                    sender.sendMessage(this.plugin.getPluginPrefix() +
                             ChatColor.RED.toString() + ChatColor.BOLD + "You shouldn't give any" +
                             "inputs to this command!");
                     return true;
@@ -48,7 +48,8 @@ public class RankupCommand implements CommandExecutor, Listener {
 
                 return true;
             } else {
-                sender.sendMessage(this.plugin.PluginPrefix + ChatColor.RED.toString() + "You must be a player to use " +
+                sender.sendMessage(this.plugin.getPluginPrefix()
+                        + ChatColor.RED.toString() + "You must be a player to use " +
                         "this command. If you are running this from the console, " +
                         "use sbsetrank <player> instead!");
                 return true;
