@@ -29,7 +29,7 @@ public class SetRankCommand implements CommandExecutor {
                 // player online
                 sender.sendMessage("Nothing yet");
             } else {
-                sender.sendMessage("Nothing yet");
+                sender.sendMessage("Nothing yet LMAO!!!");
             }
             sender.sendMessage(this.plugin.getPluginPrefix() + ChatColor.GREEN.toString() +
                     "Set the rank of " + args[0] + "to: " + args[1]);
