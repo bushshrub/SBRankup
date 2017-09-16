@@ -32,7 +32,7 @@ public class SBRankup extends JavaPlugin {
     private Permission perms = null;
     private FileConfiguration rankups = null;
     private File rankupsYml= null;
-    public String PluginPrefix = null;
+    private String PluginPrefix = null;
 
     @Override
     public void onEnable() {
@@ -127,5 +127,9 @@ public class SBRankup extends JavaPlugin {
 
     public Permission getPerms() {
         return perms;
+    }
+
+    public String getPluginPrefix() {
+        return PluginPrefix;
     }
 }
