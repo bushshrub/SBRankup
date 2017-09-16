@@ -29,7 +29,7 @@ import java.io.UnsupportedEncodingException;
 
 public class SBRankup extends JavaPlugin {
 
-    public Permission perms = null;
+    private Permission perms = null;
     private FileConfiguration rankups = null;
     private File rankupsYml= null;
     public String PluginPrefix = null;
@@ -122,5 +122,10 @@ public class SBRankup extends JavaPlugin {
         if (!rankupsYml.exists()) {
             saveResource("rankups.yml", false);
         }
+    }
+
+
+    public Permission getPerms() {
+        return perms;
     }
 }
