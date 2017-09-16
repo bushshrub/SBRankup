@@ -1,26 +1,21 @@
 package net.derpz.sbrankup.commands;
 
-import com.wasteofplastic.askyblock.ASkyBlock;
-import com.wasteofplastic.askyblock.LevelCalcByChunk;
-import com.wasteofplastic.askyblock.events.IslandPostLevelEvent;
+
 import net.derpz.sbrankup.SBRankup;
-import org.bukkit.Bukkit;
+
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.Command;
 import com.wasteofplastic.askyblock.ASkyBlockAPI;
 import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
-import org.bukkit.event.Listener;
 
 import java.util.UUID;
 
 /**
  * Created by xiurobert on 06-Sep-17.
  */
-public class RankupCommand implements CommandExecutor, Listener {
+public class RankupCommand implements CommandExecutor{
 
     private final SBRankup plugin;
 
