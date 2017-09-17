@@ -23,3 +23,7 @@ rankups:
       - <addgroup> B
       - <removegroup> A
       - <addpermission> some.permission
+  B:
+    nextrank: C
+    actions:
+      - thing

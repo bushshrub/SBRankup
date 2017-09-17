@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="SBRankup" />
+        <module name="sbrankup" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="SBRankup" target="1.8" />
+      <module name="sbrankup" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
