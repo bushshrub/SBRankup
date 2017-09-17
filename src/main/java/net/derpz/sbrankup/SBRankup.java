@@ -65,18 +65,19 @@ public class SBRankup extends JavaPlugin {
                         " Disabling plugin");
                 plmgr.disablePlugin(this);
             } else {
+                setupPermissions();
                 saveDefaultConfig();
                 getRankups();
-
-
 
                 getCommand("sbrankup").setExecutor(new RankupCommand(this));
                 getCommand("sbsetrank").setExecutor(new SetRankCommand(this));
                 getCommand("sbadmin").setExecutor(new SBAdminCommand(this));
+                getCommand("sbadmin").setTabCompleter(new SBAdminCommand(this));
+
                 //getCommand("sblistranks").setExecutor(new RankListCommand(this)); //TODO GUI for ranklist
 
 
-                new IslandLevelListener(this);
+                // new IslandLevelListener(this);
             }
         }
 

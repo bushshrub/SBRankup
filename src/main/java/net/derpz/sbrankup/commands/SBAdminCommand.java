@@ -6,13 +6,18 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.TabCompleter;
+
+import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by xiurobert on 10-Sep-17.
  */
-public class SBAdminCommand implements CommandExecutor {
+public class SBAdminCommand implements CommandExecutor, TabCompleter{
 
     private SBRankup plugin;
+    private List<String> functionalities = Arrays.asList("reload");
 
     public SBAdminCommand(SBRankup plugin) {
         this.plugin = plugin;
@@ -47,5 +52,11 @@ public class SBAdminCommand implements CommandExecutor {
             return true;
         }
         return false;
+    }
+
+    @Override
+
+    public List<String> onTabComplete(CommandSender sender, Command cmd, String label, String[] args) {
+        return functionalities;
     }
 }

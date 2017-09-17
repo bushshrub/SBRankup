@@ -16,6 +16,9 @@
 # <addgroup> [group] (world) - adds the player to a permission group
 # <removegroup> [group] (world) - removes the player from a permissions group
 # <addpermission> [permission] (world) - adds a permission
+# <removepermission> [permission] (world) - removes a permission
+# <consolecommand> [command] Runs a command as console, use %player_name% to get player name
+# <playercommand> [command] Runs a command as player, use %player_name% to get the player name
 
 
 rankups:
@@ -23,11 +26,14 @@ rankups:
     nextrank: B
     cost: 0
     actions:
-      - <addgroup> B
-      - <removegroup> A
-      - <addpermission> some.permission
+      - <removepermission> sbrankup.rank.A
+      - <addpermission> sbrankup.rank.B
+      - <consolecommand> say %player_name% ranked up to B!
+
   B:
     nextrank: C
     cost: 100
     actions:
-      - thing
+      - <removepermission> sbrankup.rank.B
+      - <addpermission> sbrankup.rank.C
+      - <consolecommand> say %player_name% ranked up to C!
