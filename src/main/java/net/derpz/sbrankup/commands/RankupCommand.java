@@ -9,7 +9,9 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.command.Command;
 import com.wasteofplastic.askyblock.ASkyBlockAPI;
 import org.bukkit.entity.Player;
+import org.yaml.snakeyaml.error.YAMLException;
 
+import java.util.Iterator;
 import java.util.UUID;
 
 /**
@@ -19,17 +21,21 @@ public class RankupCommand implements CommandExecutor{
 
     private final SBRankup plugin;
 
+    /**
+     * RankupCommand initialiser
+     * @param plugin SBRankup plugin
+     */
     public RankupCommand(SBRankup plugin) {
         this.plugin = plugin;
-
     }
 
+    
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
             if (sender instanceof Player) {
 
                 if (args.length != 0) {
-                    sender.sendMessage(this.plugin.getPluginPrefix() +
+                    sender.sendMessage(plugin.getPluginPrefix() +
                             ChatColor.RED.toString() + ChatColor.BOLD + "You shouldn't give any" +
                             "inputs to this command!");
                     return true;
@@ -40,10 +46,26 @@ public class RankupCommand implements CommandExecutor{
 
                 asbapi.calculateIslandLevel(uuid);
                 sender.sendMessage("Island level:" + asbapi.getIslandLevel(uuid));
+                //plugin.getLogger().info("hashset now");
+                for (String s : plugin.ranks) {
+                    //plugin.getLogger().info("Hashset:" + s);
+                    if (sender.hasPermission("sbrankup." + s)) {
+                        // Assume that sender is at that rank AND STOP THERE
+                        String nextRank = plugin.getRankups().getString("sbrankup." + s + ".nextrank");
+                        if (plugin.getRankups().getInt("sbrankup." + nextRank + ".cost")
+                                == asbapi.getIslandLevel(uuid)) {
+
+
+                            //plugin.getPerms().playerAddGroup()
+                        }
+                        break;
+                    }
+                }
 
                 return true;
             } else {
-                sender.sendMessage(this.plugin.getPluginPrefix()
+
+                sender.sendMessage(plugin.getPluginPrefix()
                         + ChatColor.RED.toString() + "You must be a player to use " +
                         "this command. If you are running this from the console, " +
                         "use sbsetrank <player> instead!");

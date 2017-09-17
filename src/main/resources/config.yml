@@ -1,4 +1,4 @@
 # SBRankup Configuration
 
 # Prefix of the plugin. Used in the console as well as displayed to players. You may use Bukkit Colour codes
-plugin-prefix: "&7[&3SBR&7]"
+plugin-prefix: "&7[&3SBR&7] "

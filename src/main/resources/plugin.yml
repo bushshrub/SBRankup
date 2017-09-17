@@ -20,6 +20,9 @@ commands:
     description: Views all the ranks the player has access to
     usage: /<command>
     permission: sbrankup.ranklist
+  sbadmin:
+    description: SBRankup administration utility
+    usage: /<command> [action] [arguments]
 
 permissions:
   sbrankup.player.*:
@@ -48,7 +51,7 @@ permissions:
     description: Allows you to set the rank of another player
     default: op
 
-  sbrankup.reload:
+  sbrankup.admin.reload:
     description: Reloads the configuration from the file
     default: op
 

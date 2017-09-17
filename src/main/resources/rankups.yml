@@ -5,6 +5,8 @@
 # rankups:
 #   A:
 #     nextrank: B # Put the name of the next rank in here
+#     cost: 0 # First one, put 0. This means the player is by default already this rank
+#             # This is the island level required to rankup to this rank.
 #     actions: # Actions that will be performed on rankup
 #       - <addgroup> B
 
@@ -19,11 +21,13 @@
 rankups:
   A:
     nextrank: B
+    cost: 0
     actions:
       - <addgroup> B
       - <removegroup> A
       - <addpermission> some.permission
   B:
     nextrank: C
+    cost: 100
     actions:
       - thing

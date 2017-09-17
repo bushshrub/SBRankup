@@ -1,6 +1,6 @@
 package net.derpz.sbrankup;
 
-/**
+/*
  * Created by Robert on 06-Sep-17.
  */
 
@@ -9,6 +9,7 @@ import com.wasteofplastic.askyblock.ASkyBlockAPI;
 import net.derpz.sbrankup.commands.RankListCommand;
 import net.derpz.sbrankup.commands.RankupCommand;
 
+import net.derpz.sbrankup.commands.SBAdminCommand;
 import net.derpz.sbrankup.commands.SetRankCommand;
 import net.derpz.sbrankup.listeners.IslandLevelListener;
 import net.milkbowl.vault.chat.Chat;
@@ -26,6 +27,8 @@ import java.io.File;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
+import java.util.HashSet;
+import java.util.Set;
 
 public class SBRankup extends JavaPlugin {
 
@@ -33,6 +36,8 @@ public class SBRankup extends JavaPlugin {
     private FileConfiguration rankups = null;
     private File rankupsYml= null;
     private String PluginPrefix = null;
+
+    public Set<String> ranks = new HashSet<>();
 
     @Override
     public void onEnable() {
@@ -67,6 +72,7 @@ public class SBRankup extends JavaPlugin {
 
                 getCommand("sbrankup").setExecutor(new RankupCommand(this));
                 getCommand("sbsetrank").setExecutor(new SetRankCommand(this));
+                getCommand("sbadmin").setExecutor(new SBAdminCommand(this));
                 //getCommand("sblistranks").setExecutor(new RankListCommand(this)); //TODO GUI for ranklist
 
 
@@ -96,6 +102,17 @@ public class SBRankup extends JavaPlugin {
         try {
             Reader defRankups = new InputStreamReader(getResource("rankups.yml"), "UTF8");
             rankups.setDefaults(YamlConfiguration.loadConfiguration(defRankups));
+
+            for (Object e : getRankups().getKeys(true)) {
+                if (e.toString().contains(".")) {
+                    String segs[] = e.toString().split("\\.");
+
+                    // plugin.getLogger().info(segs[1]);
+                    ranks.add(segs[1]);
+
+                }
+
+            }
 
         } catch (UnsupportedEncodingException Uee) {
             getServer().getConsoleSender().sendMessage(
@@ -129,7 +146,5 @@ public class SBRankup extends JavaPlugin {
         return perms;
     }
 
-    public String getPluginPrefix() {
-        return PluginPrefix;
-    }
+    public String getPluginPrefix() { return PluginPrefix; }
 }
