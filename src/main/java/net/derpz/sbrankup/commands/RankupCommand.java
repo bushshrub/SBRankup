@@ -49,6 +49,11 @@ public class RankupCommand implements CommandExecutor{
             List<String> nr = new ArrayList<>(plugin.ranks);
             Collections.sort(nr, Collections.reverseOrder());
             LinkedHashSet<String> NrR = new LinkedHashSet<>(nr);
+
+            if (sender.hasPermission("sbrankup.lastrank")) {
+                sender.sendMessage(plugin.getPluginPrefix() + ChatColor.GOLD + "You are already " +
+                        "on the last rank");
+            }
             for (String currRank : NrR) {
 
                 if (sender.hasPermission("sbrankup.rank." + currRank)) {
