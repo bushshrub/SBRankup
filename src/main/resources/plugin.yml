@@ -27,6 +27,7 @@ commands:
 permissions:
   sbrankup.player.*:
     description: Gives access to all player-usable commands
+    default: true
     children:
       sbrankup.rankup: true
       sbrankup.ranklist: true
@@ -34,20 +35,20 @@ permissions:
 
   sbrankup.admin.*:
     description: Gives access to all admin-usable commands
+    default: op
     children:
-      sbrankup.setrank: true
-      sbrankup.reload: true
-
+      sbrankup.admin.setrank: true
+      sbrankup.admin.reload: true
 
   sbrankup.rankup:
-    description: Allows your to rankup.
+    description: Allows you to rankup.
     default: true
 
   sbrankup.ranklist:
     description: Allows you to view the rank list
     default: true
 
-  sbrankup.setrank:
+  sbrankup.admin.setrank:
     description: Allows you to set the rank of another player
     default: op
 
