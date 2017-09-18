@@ -2,9 +2,11 @@ package net.derpz.sbrankup.commands;
 
 
 import net.derpz.sbrankup.SBRankup;
-
+import net.derpz.sbrankup.config.Messages;
+import net.derpz.sbrankup.config.Rankups;
 import net.derpz.sbrankup.rankupmanager.PermissionsEditor;
-import org.bukkit.Bukkit;
+
+import net.milkbowl.vault.chat.Chat;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -20,7 +22,7 @@ import java.util.*;
 public class RankupCommand implements CommandExecutor{
 
     private final SBRankup plugin;
-    // More coming soon
+
 
     /**
      * RankupCommand initialiser
@@ -33,6 +35,7 @@ public class RankupCommand implements CommandExecutor{
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        Messages msgs = new Messages(plugin);
         if (sender instanceof Player) {
 
             if (args.length != 0) {
@@ -44,26 +47,34 @@ public class RankupCommand implements CommandExecutor{
 
             UUID uuid = ((Player) sender).getUniqueId();
             ASkyBlockAPI asbapi = ASkyBlockAPI.getInstance();
+            
+            Rankups rus = new Rankups(plugin);
 
-
-            List<String> nr = new ArrayList<>(plugin.ranks);
-            Collections.sort(nr, Collections.reverseOrder());
+            // Reverse the ranklist so that we check if they have the last rank first, and go down
+            // This is better because some servers have inheritance
+            // such that they don't remove the permission sbrankup.rank.[previous rank]
+            // on rankup
+            List<String> nr = new ArrayList<>(rus.getRanks());
+            nr.sort(Collections.reverseOrder());
             LinkedHashSet<String> NrR = new LinkedHashSet<>(nr);
 
-            if (sender.hasPermission("sbrankup.lastrank")) {
-                sender.sendMessage(plugin.getPluginPrefix() + ChatColor.GOLD + "You are already " +
-                        "on the last rank");
-            }
             for (String currRank : NrR) {
 
                 if (sender.hasPermission("sbrankup.rank." + currRank)) {
-                    String nextRank = plugin.getRankups().getString("rankups." + currRank + ".nextrank");
+                    // Override if sender is on last rank
+                    if (currRank.equals("lastrank")) {
+                        sender.sendMessage(plugin.getPluginPrefix() + ChatColor.translateAlternateColorCodes('&',
+                                msgs.getMessages().getString("lastRank")));
+                    }
+                    String nextRank = rus.getRankups().getString("rankups." + currRank + ".nextrank");
                     // check if player has enough levels to rankup
 
-                    if (plugin.getRankups().getInt("rankups." + nextRank + ".cost") <= asbapi.getIslandLevel(uuid)) {
+                    if (rus.getRankups().getInt("rankups." + nextRank + ".cost")
+                            <= asbapi.getIslandLevel(uuid)) {
 
                         // run the rankup actions
-                        List<String> actions = plugin.getRankups().getStringList("rankups." + currRank + ".actions");
+                        List<String> actions = rus.getRankups().getStringList(
+                                "rankups." + currRank + ".actions");
 
                         for (String action : actions) {
                             String[] actionToPerform = action.split("\\s+");
@@ -86,8 +97,8 @@ public class RankupCommand implements CommandExecutor{
                                     cmdAndArgs.append(" ").append(actionToPerform[i]);
                                 }
 
-                                String execCmd = cmdAndArgs.toString().replace("%player_name%",
-                                        ((Player) sender).getDisplayName());
+                                String execCmd = plugin.replacePlaceholder("%player_name%",
+                                        ((Player) sender).getDisplayName(), cmdAndArgs.toString());
 
                                 switch (action2P) {
 
@@ -100,12 +111,13 @@ public class RankupCommand implements CommandExecutor{
                                         break;
                                     default:
                                         plugin.getServer().getConsoleSender().sendMessage(
-                                                plugin.getPluginPrefix() + ChatColor.RED + "Rankups are " +
-                                                        "configured incorrectly! Please check your rankups.yml. " +
-                                                        "The error is: The action does not exist");
-                                        sender.sendMessage(plugin.getPluginPrefix() + ChatColor.RED + "There " +
-                                                "seems to be an error ranking up. If this problem persists, " +
-                                                "contact your server administrator");
+                                                plugin.getPluginPrefix() + ChatColor.translateAlternateColorCodes(
+                                                        '&', msgs.getMessages().getString(
+                                                                "rankupsConfiguredIncorrectlyConsole")));
+                                        sender.sendMessage(plugin.getPluginPrefix() +
+                                                ChatColor.translateAlternateColorCodes('&',
+                                                        msgs.getMessages().getString(
+                                                                "rankupsConfiguredIncorrectlyToPlayer")));
                                         break;
 
                                 }
@@ -116,14 +128,22 @@ public class RankupCommand implements CommandExecutor{
 
                         // island level doesn't meet requirements
                     } else {
+
                         int missingLvls = asbapi.getIslandLevel(uuid) -
-                                plugin.getRankups().getInt("rankups." + nextRank + ".cost");
-                        sender.sendMessage(plugin.getPluginPrefix() + ChatColor.RED + "You're island level is" +
-                                " too low to rankup. You need " + missingLvls + "more to rankup. [" +
-                                asbapi.getIslandLevel(uuid) + "of " +
-                                plugin.getRankups().getInt("rankups." + nextRank + ".cost") + "levels needed. " +
-                                "If you believe that you should be able to rankup, please run /is level and run this " +
-                                "command again");
+                                rus.getRankups().getInt("rankups." + nextRank + ".cost");
+
+                        String msgToSend = plugin.replacePlaceholder("%curr_level%",
+                                asbapi.getIslandLevel(uuid) + "",
+                                msgs.getMessages().getString("notEnoughLevels"));
+
+                        msgToSend = plugin.replacePlaceholder(
+                                "%levels_needed%", rus.getRankups().getInt("rankups." +
+                                nextRank + ".cost")
+                                        + "", msgToSend);
+                        msgToSend = plugin.replacePlaceholder("%more_levels%", missingLvls + "",
+                                msgToSend);
+
+                        sender.sendMessage(plugin.getPluginPrefix() + msgToSend);
                     }
                     break;
                 }
@@ -134,9 +154,8 @@ public class RankupCommand implements CommandExecutor{
         } else {
 
             sender.sendMessage(plugin.getPluginPrefix()
-                    + ChatColor.RED.toString() + "You must be a player to use " +
-                    "this command. If you are running this from the console, " +
-                    "use sbsetrank instead!");
+                    + ChatColor.translateAlternateColorCodes('&',
+                    msgs.getMessages().getString("notAPlayer")));
             return true;
         }
 

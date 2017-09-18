@@ -11,6 +11,12 @@
 #       - <addgroup> B
 
 
+# Give your players the permission sbrankup.rank.[rank name] so the plugin knows their rank.
+# For the last rank, please give your players the permission sbrankup.rank.lastrank so the plugin knows
+# that the player is on the last rank
+#   lastrank:
+#       cost: 1000
+
 # If this looks similar to EZRanksLite/Pro, yes, I got my idea from there
 # Action list:
 # <addgroup> [group] (world) - adds the player to a permission group

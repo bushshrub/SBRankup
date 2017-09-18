@@ -1,6 +1,8 @@
 package net.derpz.sbrankup.commands;
 
 import net.derpz.sbrankup.SBRankup;
+import net.derpz.sbrankup.config.Messages;
+import net.derpz.sbrankup.config.Rankups;
 import net.milkbowl.vault.chat.Chat;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
@@ -38,16 +40,22 @@ public class SBAdminCommand implements CommandExecutor, TabCompleter{
 
         if (args[0].equalsIgnoreCase("reload")) {
             sender.sendMessage(plugin.getPluginPrefix() + ChatColor.AQUA + "Reloading Config");
-
+            long startTime = System.currentTimeMillis();
 
             plugin.getServer().getConsoleSender().sendMessage(plugin.getPluginPrefix() + ChatColor.GREEN +
-                    "Reloading " +
-                    "config.yml");
+                    "Reloading config.yml");
             plugin.reloadConfig();
             plugin.getServer().getConsoleSender().sendMessage(plugin.getPluginPrefix() + ChatColor.GREEN +
-                    "Reloading " +
-                    "rankups.yml");
-            plugin.reloadRankups();
+                    "Reloading rankups.yml");
+            Rankups rankups = new Rankups(plugin);
+            rankups.reloadRankups();
+            plugin.getServer().getConsoleSender().sendMessage(plugin.getPluginPrefix() + ChatColor.GREEN +
+                    "Reloading messages_en.yml");
+            Messages msgs = new Messages(plugin);
+            msgs.reloadmsgs();
+            long elapsedTime = System.currentTimeMillis() - startTime;
+            sender.sendMessage(plugin.getPluginPrefix() + ChatColor.AQUA +
+                    "Completed reload! (" + elapsedTime + "ms)");
 
             return true;
         }
