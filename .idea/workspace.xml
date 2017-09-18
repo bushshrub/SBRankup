@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c634ed98-42d9-4a0e-b9f2-e35707168477" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/derpz/sbrankup/config/Messages.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/net/derpz/sbrankup/config/Rankups.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/messages_en.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__net_md_5_bungeecord_chat_1_12_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_md_5_bungeecord_chat_1_12_SNAPSHOT.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/derpz/sbrankup/SBRankup.java" afterPath="$PROJECT_DIR$/src/main/java/net/derpz/sbrankup/SBRankup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/derpz/sbrankup/commands/RankupCommand.java" afterPath="$PROJECT_DIR$/src/main/java/net/derpz/sbrankup/commands/RankupCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/net/derpz/sbrankup/commands/SBAdminCommand.java" afterPath="$PROJECT_DIR$/src/main/java/net/derpz/sbrankup/commands/SBAdminCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/rankups.yml" afterPath="$PROJECT_DIR$/src/main/resources/rankups.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,11 +41,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="24" column="6" lean-forward="false" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
+            <state relative-caret-position="243">
+              <caret line="32" column="15" lean-forward="false" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -71,7 +63,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="messages_en.yml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="messages_en.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/messages_en.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="459">
@@ -153,11 +145,11 @@
         <option value="$PROJECT_DIR$/src/main/java/net/derpz/sbrankup/commands/SBAdminCommand.java" />
         <option value="$PROJECT_DIR$/spigotdbg/spigot.yml" />
         <option value="$PROJECT_DIR$/src/main/java/net/derpz/sbrankup/config/Messages.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/net/derpz/sbrankup/config/Rankups.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/derpz/sbrankup/commands/RankupCommand.java" />
         <option value="$PROJECT_DIR$/src/main/java/net/derpz/sbrankup/SBRankup.java" />
         <option value="$PROJECT_DIR$/spigotdbg/plugins/SBRankup/rankups.yml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
@@ -809,7 +801,7 @@
       <workItem from="1505556955515" duration="935000" />
       <workItem from="1505603170379" duration="30675000" />
       <workItem from="1505650629190" duration="1741000" />
-      <workItem from="1505730692499" duration="4943000" />
+      <workItem from="1505730692499" duration="5103000" />
     </task>
     <task id="LOCAL-00001" summary="loads of things again lmaooo">
       <created>1505056420813</created>
@@ -881,11 +873,18 @@
       <option name="project" value="LOCAL" />
       <updated>1505651738773</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Last rank check refactored. Refactored configuration accessors. Added timings for reload. Allowed message configurability.">
+      <created>1505735686957</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1505735686957</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51704000" />
+    <option name="totallyTimeSpent" value="51864000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -971,7 +970,8 @@
     <MESSAGE value="Finally finished the rankup part holy crap! 2" />
     <MESSAGE value="Added last rank check" />
     <MESSAGE value="Added last rank check, give permission sbrankup.lastrank" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added last rank check, give permission sbrankup.lastrank" />
+    <MESSAGE value="Last rank check refactored. Refactored configuration accessors. Added timings for reload. Allowed message configurability." />
+    <option name="LAST_COMMIT_MESSAGE" value="Last rank check refactored. Refactored configuration accessors. Added timings for reload. Allowed message configurability." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1332,14 +1332,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="24" column="6" lean-forward="false" selection-start-line="24" selection-start-column="6" selection-end-line="24" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/plugin.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -1370,6 +1362,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="459">
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="32" column="15" lean-forward="false" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
           <folding />
         </state>
       </provider>

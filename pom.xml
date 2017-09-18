@@ -21,6 +21,7 @@
                 </configuration>
             </plugin>
 
+            <!-- Debug
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
@@ -29,6 +30,7 @@
                     <outputDirectory>spigotdbg/plugins</outputDirectory>
                 </configuration>
             </plugin>
+            -->
 
 
         </plugins>
