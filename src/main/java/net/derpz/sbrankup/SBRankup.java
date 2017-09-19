@@ -11,6 +11,11 @@ import net.derpz.sbrankup.commands.SetRankCommand;
 import net.derpz.sbrankup.config.Rankups;
 import net.derpz.sbrankup.config.Messages;
 
+import net.derpz.sbrankup.nms.actionbar.ActionBar;
+
+
+import net.derpz.sbrankup.nms.actionbar.ActionBar_1_12_R1;
+import net.milkbowl.vault.chat.Chat;
 import org.bukkit.ChatColor;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.Plugin;
@@ -23,9 +28,11 @@ import net.milkbowl.vault.permission.Permission;
 public class SBRankup extends JavaPlugin {
 
     private Permission perms = null;
-
+    private Chat chat = null;
     private String PluginPrefix = null;
 
+
+    private ActionBar actionbar;
     @Override
     public void onEnable() {
 
@@ -41,37 +48,50 @@ public class SBRankup extends JavaPlugin {
 
         if (asb == null) {
 
-            console.sendMessage(PluginPrefix + ChatColor.RED.toString() + " ASkyBlock was NOT detected. " +
-                    "Disabling plugin");
+            console.sendMessage(PluginPrefix + ChatColor.RED.toString() +
+                    "ASkyBlock was NOT detected! Disabling plugin");
             plmgr.disablePlugin(this);
-        } else {
-            console.sendMessage(PluginPrefix + ChatColor.GREEN.toString() + " Linking to ASkyBlock!");
-
-            if (!setupPermissions()) {
-                console.sendMessage(PluginPrefix + ChatColor.RED.toString() + " Can't link Vault for permissions!" +
-                        " Disabling plugin");
-                plmgr.disablePlugin(this);
-            } else {
-                setupPermissions();
-                saveDefaultConfig();
-
-                Messages msgs = new Messages(this);
-                msgs.saveDefault();
-
-                Rankups rankups = new Rankups(this);
-                rankups.saveDefault();
-
-                getCommand("sbrankup").setExecutor(new RankupCommand(this));
-                getCommand("sbsetrank").setExecutor(new SetRankCommand(this));
-                getCommand("sbadmin").setExecutor(new SBAdminCommand(this));
-                getCommand("sbadmin").setTabCompleter(new SBAdminCommand(this));
-
-                //getCommand("sblistranks").setExecutor(new RankListCommand(this)); //TODO GUI for ranklist
-
-
-                // new IslandLevelListener(this);
-            }
         }
+        console.sendMessage(PluginPrefix + ChatColor.GREEN.toString() + "Linking to ASkyBlock!");
+
+        if (!setupPermissions()) {
+            console.sendMessage(PluginPrefix + ChatColor.RED.toString() +
+                    "Can't link Vault for permissions! Disabling plugin.");
+            plmgr.disablePlugin(this);
+        }
+
+        if (!setupChat()) {
+            console.sendMessage(PluginPrefix + ChatColor.RED.toString() +
+            "Can't link Vault for chat! Disabling plugin.");
+            plmgr.disablePlugin(this);
+        }
+
+        if (!setupActionBar()) {
+            console.sendMessage(PluginPrefix + ChatColor.RED.toString() +
+                    "Server version is incompatible with the NMS version in this plugin. Disabling. (Future releases " +
+                    "will have more NMS support)");
+            plmgr.disablePlugin(this);
+        }
+
+        saveDefaultConfig();
+
+        Messages msgs = new Messages(this);
+        msgs.saveDefault();
+
+        Rankups rankups = new Rankups(this);
+        rankups.saveDefault();
+
+        getCommand("sbrankup").setExecutor(new RankupCommand(this));
+        getCommand("sbsetrank").setExecutor(new SetRankCommand(this));
+        getCommand("sbadmin").setExecutor(new SBAdminCommand(this));
+        getCommand("sbadmin").setTabCompleter(new SBAdminCommand(this));
+
+        //getCommand("sblistranks").setExecutor(new RankListCommand(this)); //TODO GUI for ranklist
+
+
+        // new IslandLevelListener(this);
+
+
 
 
     }
@@ -89,16 +109,42 @@ public class SBRankup extends JavaPlugin {
     }
 
 
-
-
-    public Permission getPerms() {
-        return perms;
+    private boolean setupChat() {
+        RegisteredServiceProvider<Chat> rsp = getServer().getServicesManager().getRegistration(Chat.class);
+        chat = rsp.getProvider();
+        return chat != null;
     }
 
-    public String getPluginPrefix() { return PluginPrefix; }
+    private boolean setupActionBar() {
+        String version;
+
+        try {
+            version = getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];
+        } catch (ArrayIndexOutOfBoundsException WeirdVersionE) {
+            return false;
+        }
+
+        getLogger().info("NMS hook for version" + version + "activating");
+
+        if (version.equals("v1_12_R1")) {
+            actionbar = new ActionBar_1_12_R1();
+        }
+        return actionbar != null;
+    }
+
 
     public String replacePlaceholder(CharSequence placeholder, String textToReplaceIn, String inputText) {
 
         return inputText.replace(placeholder, textToReplaceIn);
     }
+
+
+
+    public Permission getPerms() { return perms; }
+
+    public Chat getChat() { return chat; }
+
+    public String getPluginPrefix() { return PluginPrefix; }
+
+    public ActionBar getActionbar() { return actionbar; }
 }

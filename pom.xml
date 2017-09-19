@@ -6,6 +6,7 @@
 
     <groupId>net.derpz</groupId>
     <artifactId>sbrankup</artifactId>
+    <packaging>pom</packaging>
     <version>1.0.1</version>
 
 
@@ -36,9 +37,6 @@
         </plugins>
 
         <defaultGoal>install</defaultGoal>
-
-
-
     </build>
 
 
@@ -82,11 +80,18 @@
         </dependency>
 
         <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot</artifactId>
+            <version>1.12.1-R0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
             <groupId>net.milkbowl.vault</groupId>
             <artifactId>VaultAPI</artifactId>
             <version>1.6</version>
             <scope>provided</scope>
         </dependency>
+
 
 
     </dependencies>

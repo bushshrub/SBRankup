@@ -28,6 +28,8 @@ notAPlayer: &cYou must be a player to run this command!
 
 lastRank: &6You are already on the last rank!
 
+noRankDetected: &cCould not detect the rank. Perhaps the server is configured incorrectly?
+
 
 
 

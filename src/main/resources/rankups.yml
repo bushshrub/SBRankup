@@ -15,6 +15,7 @@
 # For the last rank, please give your players the permission sbrankup.rank.lastrank so the plugin knows
 # that the player is on the last rank
 #   lastrank:
+#       name: Z
 #       cost: 1000
 
 # If this looks similar to EZRanksLite/Pro, yes, I got my idea from there
@@ -25,6 +26,12 @@
 # <removepermission> [permission] (world) - removes a permission
 # <consolecommand> [command] Runs a command as console, use %player_name% to get player name
 # <playercommand> [command] Runs a command as player, use %player_name% to get the player name
+# <playermessage> [message] Sends a message to the player. Bukkit colour codes accepted.
+# <broadcastmessage> [message] Broadcasts a message to the server. Bukkit colour codes accepted.
+# <playeractionbar> [message] Sends an action bar message to the player. Bukkit colour codes accepted.
+# <broadcastactionbar> [message] Sends an action bar message to the whole server. Bukkit colour codes accepted.
+# <setprefix> [prefix] Sets the player's prefix
+# <setsuffix> [suffix] Sets the player's suffix
 
 
 rankups:
@@ -37,9 +44,12 @@ rankups:
       - <consolecommand> say %player_name% ranked up to B!
 
   B:
-    nextrank: C
+    nextrank: lastrank
     cost: 100
     actions:
       - <removepermission> sbrankup.rank.B
-      - <addpermission> sbrankup.rank.C
+      - <addpermission> sbrankup.rank.lastrank
       - <consolecommand> say %player_name% ranked up to C!
+  lastrank:
+    name: C
+    cost: 200
