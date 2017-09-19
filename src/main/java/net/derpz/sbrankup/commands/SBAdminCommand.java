@@ -20,6 +20,7 @@ public class SBAdminCommand implements CommandExecutor, TabCompleter{
 
     private SBRankup plugin;
     private List<String> functionalities = Arrays.asList("reload");
+    private Messages msgs2 = new Messages(plugin);
 
     public SBAdminCommand(SBRankup plugin) {
         this.plugin = plugin;
@@ -29,6 +30,11 @@ public class SBAdminCommand implements CommandExecutor, TabCompleter{
     @Override
 
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
+        if (!sender.hasPermission("sbrankup.admin.reload")) {
+            sender.sendMessage(plugin.getPluginPrefix() + ChatColor.translateAlternateColorCodes('&',
+                    msgs2.getMessages().getString("noPermission")));
+            return true;
+        }
 
         if (args.length == 0) {
             sender.sendMessage(ChatColor.YELLOW.toString() + ChatColor.BOLD + "[ SBRankup by DerpZ ]");

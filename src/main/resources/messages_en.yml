@@ -30,6 +30,8 @@ lastRank: &6You are already on the last rank!
 
 noRankDetected: &cCould not detect the rank. Perhaps the server is configured incorrectly?
 
+noPermission: &cYou do not have permission to do that.
+
 
 
 
