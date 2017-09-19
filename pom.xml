@@ -6,7 +6,7 @@
 
     <groupId>net.derpz</groupId>
     <artifactId>sbrankup</artifactId>
-    <packaging>pom</packaging>
+
     <version>1.0.2</version>
 
 
@@ -36,7 +36,7 @@
 
         </plugins>
 
-        <defaultGoal>install</defaultGoal>
+        <defaultGoal>clean package install</defaultGoal>
     </build>
 
 
@@ -79,11 +79,14 @@
             <version>3.0.6.9</version>
         </dependency>
 
+
         <dependency>
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot</artifactId>
             <version>1.12.1-R0.1-SNAPSHOT</version>
         </dependency>
+
+      
 
         <dependency>
             <groupId>net.milkbowl.vault</groupId>
@@ -91,7 +94,6 @@
             <version>1.6</version>
             <scope>provided</scope>
         </dependency>
-
 
 
     </dependencies>
