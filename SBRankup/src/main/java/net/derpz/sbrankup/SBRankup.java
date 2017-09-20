@@ -11,10 +11,9 @@ import net.derpz.sbrankup.commands.SetRankCommand;
 import net.derpz.sbrankup.config.Rankups;
 import net.derpz.sbrankup.config.Messages;
 
-import net.derpz.sbrankup.nms.actionbar.ActionBar;
+import net.derpz.sbrankup.nms.actionbar.*;
 
 
-import net.derpz.sbrankup.nms.actionbar.ActionBar_1_12_R1;
 import net.milkbowl.vault.chat.Chat;
 import org.bukkit.ChatColor;
 import org.bukkit.command.ConsoleCommandSender;
@@ -89,16 +88,11 @@ public class SBRankup extends JavaPlugin {
         //getCommand("sblistranks").setExecutor(new RankListCommand(this)); //TODO GUI for ranklist
 
 
-        // new IslandLevelListener(this);
-
-
-
-
     }
 
     @Override
     public void onDisable() {
-        getServer().getConsoleSender().sendMessage(PluginPrefix + ChatColor.GREEN.toString() + "" +
+        getServer().getConsoleSender().sendMessage(PluginPrefix + ChatColor.GREEN.toString() +
                 "SBRankup is now shutting down");
     }
 
@@ -124,10 +118,26 @@ public class SBRankup extends JavaPlugin {
             return false;
         }
 
-        getLogger().info("NMS hook for version" + version + "activating");
+        getServer().getConsoleSender().sendMessage(PluginPrefix + ChatColor.AQUA.toString() +
+        "Now attempting NMS hook for version" + version);
 
         if (version.equals("v1_12_R1")) {
             actionbar = new ActionBar_1_12_R1();
+        }
+
+        switch (version) {
+            case "v1_12_R1":
+                actionbar = new ActionBar_1_12_R1();
+                break;
+            case "v1_11_R1":
+                actionbar = new ActionBar_1_11_R1();
+                break;
+            case "v1_10_R1":
+                actionbar = new ActionBar_1_10_R1();
+                break;
+            case "v1_9_R2":
+                actionbar = new ActionBar_1_9_R2();
+                break;
         }
         return actionbar != null;
     }

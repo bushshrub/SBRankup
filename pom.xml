@@ -5,10 +5,20 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.derpz</groupId>
-    <artifactId>sbrankup</artifactId>
+    <artifactId>sbrankup-parent</artifactId>
+    <version>parent</version>
 
-    <version>1.0.2</version>
+    <packaging>pom</packaging>
 
+    <modules>
+        <module>sbrankup</module>
+        <module>v1_12_R1</module>
+        <module>v1_11_R1</module>
+        <module>nms</module>
+        <module>v1_10_R1</module>
+        <module>v1_9_R2</module>
+        <module>v1_9_R1</module>
+    </modules>
 
     <build>
         <plugins>
@@ -21,22 +31,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
-
-            <!-- Debug
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
-                <configuration>
-                    <outputDirectory>spigotdbg/plugins</outputDirectory>
-                </configuration>
-            </plugin>
-            -->
-
-
         </plugins>
-
-        <defaultGoal>clean package install</defaultGoal>
     </build>
 
 
@@ -45,59 +40,5 @@
             <id>spigot-repo-snapshots</id>
             <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots</url>
         </repository>
-
-
-        <repository>
-            <id>bintray-tastybento-maven-repo</id>
-            <name>bintray</name>
-            <url>http://dl.bintray.com/tastybento/maven-repo</url>
-        </repository>
-
-        <repository>
-            <id>sonatype-oss-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </repository>
-
-        <repository>
-            <id>vault-repo</id>
-            <url>http://nexus.hc.to/content/repositories/pub_releases</url>
-        </repository>
-
     </repositories>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot-api</artifactId>
-            <version>1.12.1-R0.1-SNAPSHOT</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>com.wasteofplastic</groupId>
-            <artifactId>askyblock</artifactId>
-            <version>3.0.6.9</version>
-        </dependency>
-
-
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot</artifactId>
-            <version>1.12.1-R0.1-SNAPSHOT</version>
-        </dependency>
-
-      
-
-        <dependency>
-            <groupId>net.milkbowl.vault</groupId>
-            <artifactId>VaultAPI</artifactId>
-            <version>1.6</version>
-            <scope>provided</scope>
-        </dependency>
-
-
-    </dependencies>
-
-
-
 </project>

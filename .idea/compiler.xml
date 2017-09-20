@@ -6,13 +6,24 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="SBRankup" />
+        <module name="nms" />
+        <module name="sbrankup" />
+        <module name="v1_10_R1" />
+        <module name="v1_11_R1" />
+        <module name="v1_12_R1" />
+        <module name="v1_9_R1" />
+        <module name="v1_9_R2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="SBRankup" target="1.8" />
+      <module name="nms" target="1.8" />
       <module name="sbrankup" target="1.8" />
-      <module name="sbrankup-v1_12_R1" target="1.8" />
+      <module name="sbrankup-parent" target="1.8" />
+      <module name="v1_10_R1" target="1.8" />
+      <module name="v1_11_R1" target="1.8" />
+      <module name="v1_12_R1" target="1.8" />
+      <module name="v1_9_R1" target="1.8" />
+      <module name="v1_9_R2" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
