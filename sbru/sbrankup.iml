@@ -3,9 +3,9 @@
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/SBRankup/target/classes" />
     <output-test url="file://$MODULE_DIR$/SBRankup/target/test-classes" />
-    <content url="file://$MODULE_DIR$/SBRankup">
-      <sourceFolder url="file://$MODULE_DIR$/SBRankup/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/SBRankup/src/main/resources" type="java-resource" />
+    <content url="file://$MODULE_DIR$/sbrankup">
+      <sourceFolder url="file://$MODULE_DIR$/sbrankup/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sbrankup/src/main/resources" type="java-resource" />
       <excludeFolder url="file://$MODULE_DIR$/SBRankup/target" />
     </content>
     <orderEntry type="inheritedJdk" />
