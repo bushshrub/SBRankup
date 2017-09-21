@@ -1,5 +1,6 @@
-package net.derpz.sbrankup.nms.actionbar;
+package net.derpz.sbrankup.nms;
 
+import net.derpz.sbrankup.nms.ActionBar;
 import net.minecraft.server.v1_9_R2.IChatBaseComponent;
 import net.minecraft.server.v1_9_R2.PacketPlayOutChat;
 import org.bukkit.craftbukkit.v1_9_R2.entity.CraftPlayer;

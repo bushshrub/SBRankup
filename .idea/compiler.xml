@@ -10,6 +10,7 @@
         <module name="v1_10_R1" />
         <module name="v1_11_R1" />
         <module name="v1_12_R1" />
+        <module name="v1_8_R3" />
         <module name="v1_9_R1" />
         <module name="v1_9_R2" />
       </profile>
@@ -27,6 +28,7 @@
       <module name="v1_10_R1" target="1.8" />
       <module name="v1_11_R1" target="1.8" />
       <module name="v1_12_R1" target="1.8" />
+      <module name="v1_8_R3" target="1.8" />
       <module name="v1_9_R1" target="1.8" />
       <module name="v1_9_R2" target="1.8" />
     </bytecodeTargetLevel>

@@ -1,14 +1,15 @@
-package net.derpz.sbrankup.nms.actionbar;
+package net.derpz.sbrankup.nms;
 
-import net.minecraft.server.v1_10_R1.IChatBaseComponent;
-import net.minecraft.server.v1_10_R1.PacketPlayOutChat;
-import org.bukkit.craftbukkit.v1_10_R1.entity.CraftPlayer;
+import net.derpz.sbrankup.nms.ActionBar;
+import net.minecraft.server.v1_11_R1.IChatBaseComponent;
+import net.minecraft.server.v1_11_R1.PacketPlayOutChat;
+import org.bukkit.craftbukkit.v1_11_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
 /**
  * Created by xiurobert on 19-Sep-17.
  */
-public class ActionBar_1_10_R1 implements ActionBar {
+public class ActionBar_1_11_R1 implements ActionBar {
 
     @Override
     public void sendActionBar(Player p, String message) {

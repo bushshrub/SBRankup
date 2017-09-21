@@ -1,4 +1,4 @@
-package net.derpz.sbrankup.nms.actionbar;
+package net.derpz.sbrankup.nms;
 
 import org.bukkit.entity.Player;
 

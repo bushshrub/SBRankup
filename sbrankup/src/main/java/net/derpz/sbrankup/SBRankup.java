@@ -11,8 +11,7 @@ import net.derpz.sbrankup.commands.SetRankCommand;
 import net.derpz.sbrankup.config.Rankups;
 import net.derpz.sbrankup.config.Messages;
 
-import net.derpz.sbrankup.nms.actionbar.*;
-
+import net.derpz.sbrankup.nms.*;
 
 import net.milkbowl.vault.chat.Chat;
 import org.bukkit.ChatColor;
@@ -32,6 +31,7 @@ public class SBRankup extends JavaPlugin {
 
 
     private ActionBar actionbar;
+    private JsonMessage jsonMessage;
     @Override
     public void onEnable() {
 
@@ -65,16 +65,12 @@ public class SBRankup extends JavaPlugin {
             plmgr.disablePlugin(this);
         }
 
-        if (!setupActionBar()) {
+        if (!setupNMS()) {
             console.sendMessage(PluginPrefix + ChatColor.RED.toString() +
                     "Server version is incompatible with the NMS version in this plugin. Disabling. (Future releases " +
                     "will have more NMS support)");
             plmgr.disablePlugin(this);
         }
-
-        setupPermissions();
-        setupChat();
-        setupActionBar();
 
         saveDefaultConfig();
 
@@ -113,7 +109,7 @@ public class SBRankup extends JavaPlugin {
         return chat != null;
     }
 
-    private boolean setupActionBar() {
+    private boolean setupNMS() {
         String version;
 
         try {
@@ -129,15 +125,23 @@ public class SBRankup extends JavaPlugin {
         switch (version) {
             case "v1_12_R1":
                 actionbar = new ActionBar_1_12_R1();
+                jsonMessage = new JsonMessage_1_12_R1();
                 break;
             case "v1_11_R1":
                 actionbar = new ActionBar_1_11_R1();
+                jsonMessage = new JsonMessage_1_11_R1();
                 break;
             case "v1_10_R1":
                 actionbar = new ActionBar_1_10_R1();
+                jsonMessage = new JsonMessage_1_10_R1();
                 break;
             case "v1_9_R2":
                 actionbar = new ActionBar_1_9_R2();
+                jsonMessage = new JsonMessage_1_9_R2();
+                break;
+            case "v1_9_R1":
+                actionbar = new ActionBar_1_9_R1();
+                jsonMessage = new JsonMessage_1_9_R1();
                 break;
         }
         return actionbar != null;
