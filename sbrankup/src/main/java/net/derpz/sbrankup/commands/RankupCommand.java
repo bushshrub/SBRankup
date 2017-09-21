@@ -39,8 +39,7 @@ public class RankupCommand implements CommandExecutor{
         Messages msgs = new Messages(plugin);
         if (!(sender instanceof Player)) {
             sender.sendMessage(plugin.getPluginPrefix()
-                    + ChatColor.translateAlternateColorCodes('&',
-                    msgs.getMessages().getString("notAPlayer")));
+                    + msgs.getAltColourCodedMsg("notAPlayer"));
             return true;
         }
 
@@ -68,15 +67,12 @@ public class RankupCommand implements CommandExecutor{
         for (String currRank : NrR) {
 
             if (!sender.hasPermission("sbrankup.rank." + currRank)) {
-                sender.sendMessage(plugin.getPluginPrefix() + ChatColor.translateAlternateColorCodes(
-                        '&', msgs.getMessages().getString("noRankDetected")
-                ));
+                sender.sendMessage(plugin.getPluginPrefix() + msgs.getAltColourCodedMsg("noRankDetected"));
             }
 
             // Override if sender is on last rank
             if (currRank.equals("lastrank")) {
-                sender.sendMessage(plugin.getPluginPrefix() + ChatColor.translateAlternateColorCodes('&',
-                        msgs.getMessages().getString("lastRank")));
+                sender.sendMessage(plugin.getPluginPrefix() + msgs.getAltColourCodedMsg("lastRank"));
             }
             String nextRank = rus.getRankups().getString("rankups." + currRank + ".nextrank");
             // check if player has enough levels to rankup
@@ -156,13 +152,10 @@ public class RankupCommand implements CommandExecutor{
 
                             default:
                                 plugin.getServer().getConsoleSender().sendMessage(
-                                        plugin.getPluginPrefix() + ChatColor.translateAlternateColorCodes(
-                                                '&', msgs.getMessages().getString(
-                                                        "rankupsConfiguredIncorrectlyConsole")));
+                                        plugin.getPluginPrefix() + msgs.getAltColourCodedMsg(
+                                                "rankupsConfiguredIncorrectlyConsole"));
                                 sender.sendMessage(plugin.getPluginPrefix() +
-                                        ChatColor.translateAlternateColorCodes('&',
-                                                msgs.getMessages().getString(
-                                                        "rankupsConfiguredIncorrectlyToPlayer")));
+                                        msgs.getAltColourCodedMsg("rankupsConfiguredIncorrectlyToPlayer"));
                                 break;
 
                         }
@@ -179,7 +172,7 @@ public class RankupCommand implements CommandExecutor{
 
                 String msgToSend = plugin.replacePlaceholder("%curr_level%",
                         asbapi.getIslandLevel(uuid) + "",
-                        msgs.getMessages().getString("notEnoughLevels"));
+                        msgs.getAltColourCodedMsg("notEnoughLevels"));
 
                 msgToSend = plugin.replacePlaceholder(
                         "%levels_needed%", rus.getRankups().getInt("rankups." +

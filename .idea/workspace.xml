@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="066ce462-4a41-43d6-9969-9155ac7d8812" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sbrankup.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/SBRankup.java" afterPath="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/SBRankup.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankupCommand.java" afterPath="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankupCommand.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/config/Messages.java" afterPath="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/config/Messages.java" />
     </list>
     <ignored path="$PROJECT_DIR$/SBRankup/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -24,14 +23,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SBRankup.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SBRankup.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/SBRankup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
+            <state relative-caret-position="588">
               <caret line="125" column="45" lean-forward="false" selection-start-line="125" selection-start-column="45" selection-end-line="125" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RankupCommand.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankupCommand.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="211">
+              <caret line="143" column="38" lean-forward="true" selection-start-line="142" selection-start-column="53" selection-end-line="143" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Messages.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/config/Messages.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="messages_en.yml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sbrankup/src/main/resources/messages_en.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="28" column="45" lean-forward="false" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -97,6 +126,8 @@
         <option value="$PROJECT_DIR$/SBRankup/src/main/java/net/derpz/sbrankup/SBRankup.java" />
         <option value="$PROJECT_DIR$/sbrankup/pom.xml" />
         <option value="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/SBRankup.java" />
+        <option value="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/config/Messages.java" />
+        <option value="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankupCommand.java" />
       </list>
     </option>
   </component>
@@ -184,11 +215,57 @@
             <path>
               <item name="sbrankup-parent" type="b2602c69:ProjectViewProjectNode" />
               <item name="SBRankup" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="sbrankup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sbrankup-parent" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="SBRankup" type="462c0819:PsiDirectoryNode" />
+              <item name="sbrankup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sbrankup-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SBRankup" type="462c0819:PsiDirectoryNode" />
+              <item name="sbrankup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sbrankup-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SBRankup" type="462c0819:PsiDirectoryNode" />
+              <item name="sbrankup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sbrankup" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sbrankup-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SBRankup" type="462c0819:PsiDirectoryNode" />
+              <item name="sbrankup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sbrankup" type="462c0819:PsiDirectoryNode" />
+              <item name="commands" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sbrankup-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SBRankup" type="462c0819:PsiDirectoryNode" />
+              <item name="sbrankup" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sbrankup" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sbrankup-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SBRankup" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -440,12 +517,20 @@
       <option name="presentableId" value="Default" />
       <updated>1505904642856</updated>
       <workItem from="1505904645153" duration="4392000" />
-      <workItem from="1505991003242" duration="858000" />
+      <workItem from="1505991003242" duration="3498000" />
     </task>
+    <task id="LOCAL-00001" summary="fix a SMALL problem">
+      <created>1505991953540</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1505991953540</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5250000" />
+    <option name="totallyTimeSpent" value="7890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -516,6 +601,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix a SMALL problem" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix a SMALL problem" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -683,11 +772,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/SBRankup.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
+        <state relative-caret-position="588">
           <caret line="125" column="45" lean-forward="false" selection-start-line="125" selection-start-column="45" selection-end-line="125" selection-end-column="45" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sbrankup/src/main/resources/messages_en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="28" column="45" lean-forward="false" selection-start-line="28" selection-start-column="45" selection-end-line="28" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/config/Messages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankupCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="143" column="38" lean-forward="true" selection-start-line="142" selection-start-column="53" selection-end-line="143" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>

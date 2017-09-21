@@ -39,6 +39,14 @@ public class Messages {
         return msgs;
     }
 
+    public String getAltColourCodedMsg(String path){
+        if (msgs == null) {
+            reloadmsgs();
+        }
+
+        return ChatColor.translateAlternateColorCodes('&', msgs.getString(path));
+    }
+
     public void reloadmsgs() {
         saveDefault();
 
