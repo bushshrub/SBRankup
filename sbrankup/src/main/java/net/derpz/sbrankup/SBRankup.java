@@ -123,7 +123,7 @@ public class SBRankup extends JavaPlugin {
         }
 
         getServer().getConsoleSender().sendMessage(PluginPrefix + ChatColor.AQUA.toString() +
-        "Now attempting NMS hook for version" + version);
+        "Now attempting NMS hook for version " + version);
 
 
         switch (version) {
