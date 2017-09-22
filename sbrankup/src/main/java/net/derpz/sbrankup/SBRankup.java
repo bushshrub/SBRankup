@@ -72,6 +72,10 @@ public class SBRankup extends JavaPlugin {
             plmgr.disablePlugin(this);
         }
 
+        setupPermissions();
+        setupChat();
+        setupActionBar();
+
         saveDefaultConfig();
 
         Messages msgs = new Messages(this);
@@ -121,9 +125,6 @@ public class SBRankup extends JavaPlugin {
         getServer().getConsoleSender().sendMessage(PluginPrefix + ChatColor.AQUA.toString() +
         "Now attempting NMS hook for version" + version);
 
-        if (version.equals("v1_12_R1")) {
-            actionbar = new ActionBar_1_12_R1();
-        }
 
         switch (version) {
             case "v1_12_R1":
@@ -147,8 +148,6 @@ public class SBRankup extends JavaPlugin {
 
         return inputText.replace(placeholder, textToReplaceIn);
     }
-
-
 
     public Permission getPerms() { return perms; }
 

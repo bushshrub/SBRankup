@@ -34,7 +34,6 @@
         </plugins>
     </build>
 
-
     <repositories>
         <repository>
             <id>spigot-repo-snapshots</id>
