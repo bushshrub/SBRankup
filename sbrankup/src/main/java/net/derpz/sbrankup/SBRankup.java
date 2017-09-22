@@ -14,6 +14,7 @@ import net.derpz.sbrankup.config.Messages;
 import net.derpz.sbrankup.nms.*;
 
 import net.milkbowl.vault.chat.Chat;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.Plugin;
@@ -51,6 +52,12 @@ public class SBRankup extends JavaPlugin {
                     "ASkyBlock was NOT detected! Disabling plugin");
             plmgr.disablePlugin(this);
         }
+
+        if (plmgr.getPlugin("PlaceholderAPI") == null) {
+            console.sendMessage(PluginPrefix + ChatColor.RED.toString() +
+                    "PlaceholderAPI was NOT detected! PlaceholderAPI hooks will " +
+                    "be unavailable");
+        }
         console.sendMessage(PluginPrefix + ChatColor.GREEN.toString() + "Linking to ASkyBlock!");
 
         if (!setupPermissions()) {
@@ -77,8 +84,7 @@ public class SBRankup extends JavaPlugin {
         Messages msgs = new Messages(this);
         msgs.saveDefault();
 
-        Rankups rankups = new Rankups(this);
-        rankups.saveDefault();
+        Rankups.saveDefault();
 
         getCommand("sbrankup").setExecutor(new RankupCommand(this));
         getCommand("sbsetrank").setExecutor(new SetRankCommand(this));
@@ -144,7 +150,7 @@ public class SBRankup extends JavaPlugin {
                 jsonMessage = new JsonMessage_1_9_R1();
                 break;
         }
-        return actionbar != null;
+        return jsonMessage != null;
     }
 
 

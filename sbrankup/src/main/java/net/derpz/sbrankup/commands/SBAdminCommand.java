@@ -53,8 +53,7 @@ public class SBAdminCommand implements CommandExecutor, TabCompleter{
             plugin.reloadConfig();
             plugin.getServer().getConsoleSender().sendMessage(plugin.getPluginPrefix() + ChatColor.GREEN +
                     "Reloading rankups.yml");
-            Rankups rankups = new Rankups(plugin);
-            rankups.reloadRankups();
+            Rankups.reloadRankups();
             plugin.getServer().getConsoleSender().sendMessage(plugin.getPluginPrefix() + ChatColor.GREEN +
                     "Reloading messages_en.yml");
             Messages msgs = new Messages(plugin);

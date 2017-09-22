@@ -4,31 +4,31 @@ import net.derpz.sbrankup.SBRankup;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 
 import java.io.File;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.io.UnsupportedEncodingException;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by xiurobert on 18-Sep-17.
  */
 public class Rankups {
 
-    private SBRankup plugin;
-    private Set<String> ranks = new HashSet<>();
-    private File rankupsYml = null;
-    private FileConfiguration rankups = null;
+    private static SBRankup plugin;
+    private static Set<String> ranks = new HashSet<>();
+    private static File rankupsYml = null;
+    private static FileConfiguration rankups = null;
 
 
     public Rankups(SBRankup plugin) {
-        this.plugin = plugin;
+        Rankups.plugin = plugin;
     }
 
 
-    public void reloadRankups() {
+    public static void reloadRankups() {
         saveDefault();
 
         rankups = YamlConfiguration.loadConfiguration(rankupsYml);
@@ -54,14 +54,14 @@ public class Rankups {
 
     }
 
-    public FileConfiguration getRankups() {
+    public static FileConfiguration getRankups() {
         if (rankups == null) {
             reloadRankups();
         }
         return rankups;
     }
 
-    public void saveDefault() {
+    public static void saveDefault() {
         if (rankupsYml == null) {
             rankupsYml = new File(plugin.getDataFolder(), "rankups.yml");
         }
@@ -72,11 +72,28 @@ public class Rankups {
     }
 
 
-    public Set<String> getRanks() {
+    public static Set<String> getRanks() {
         if (rankups == null) {
             reloadRankups();
         }
         return ranks;
+    }
+
+    public static String getRankOfPlayer(Player p) {
+
+        // Reverse the ranklist so that we check if they have the last rank first, and go down
+        // This is better because some servers have inheritance
+        // such that they don't remove the permission sbrankup.rank.[previous rank]
+        // on rankup
+        List<String> nr = new ArrayList<>(ranks);
+        nr.sort(Collections.reverseOrder());
+        LinkedHashSet<String> NrR = new LinkedHashSet<>(nr);
+        for (String rank: NrR) {
+            if (p.hasPermission("sbrankup.rank." + rank)) {
+                return rank;
+            }
+        }
+        return "";
     }
 
 }
