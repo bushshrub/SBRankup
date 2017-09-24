@@ -36,6 +36,8 @@ public class Placeholders extends EZPlaceholderHook {
                 int islandLevel = ASkyBlockAPI.getInstance().getIslandLevel(p.getUniqueId());
                 int needed = Rankups.getRankups().getInt("rankups." + Rankups.getNextRank(p) + ".cost");
                 return (needed - islandLevel) + "";
+            case "last_rank_name":
+                return Rankups.getRankups().getString("rankups.lastrank.name");
 
         }
 
