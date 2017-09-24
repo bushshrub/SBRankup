@@ -64,7 +64,7 @@ public class RankupCommand implements CommandExecutor{
         if (currRank.equals("lastrank")) {
             sender.sendMessage(plugin.getPluginPrefix() + msgs.getAltColourCodedMsg("lastRank"));
         }
-        String nextRank = Rankups.getRankups().getString("rankups." + currRank + ".nextrank");
+        String nextRank = Rankups.getNextRank((Player) sender);
         // check if player has enough levels to rankup
 
         if (Rankups.getRankups().getInt("rankups." + nextRank + ".cost")

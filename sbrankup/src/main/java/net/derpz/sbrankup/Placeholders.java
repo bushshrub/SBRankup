@@ -28,15 +28,15 @@ public class Placeholders extends EZPlaceholderHook {
             case "rank":
                 return Rankups.getRankOfPlayer(p);
             case "next_rank":
-                return Rankups.getRankups().getString("rankups." + Rankups.getRankOfPlayer(p) +
-                ".nextrank");
+                return Rankups.getNextRank(p);
             case "next_rank_cost":
                 return Rankups.getRankups().getString(
-                        "rankups." +
-                                Rankups.getRankups().getString(
-                                        "rankups." + Rankups.getRankOfPlayer(p) + ".nextrank") +".cost");
+                        "rankups." + Rankups.getNextRank(p) +".cost");
             case "next_rank_difference":
-                int Needed = ASkyBlockAPI.getInstance().getIslandLevel(p.getUniqueId());
+                int islandLevel = ASkyBlockAPI.getInstance().getIslandLevel(p.getUniqueId());
+                int needed = Rankups.getRankups().getInt("rankups." + Rankups.getNextRank(p) + ".cost");
+                return (needed - islandLevel) + "";
+
         }
 
         return null;

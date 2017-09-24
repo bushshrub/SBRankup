@@ -96,4 +96,8 @@ public class Rankups {
         return "";
     }
 
+    public static String getNextRank(Player p) {
+        return getRankups().getString("rankups." + getRankOfPlayer(p) + ".nextrank" );
+    }
+
 }
