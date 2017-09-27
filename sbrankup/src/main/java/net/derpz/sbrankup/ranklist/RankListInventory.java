@@ -16,10 +16,7 @@ public class RankListInventory {
     public RankListInventory(SBRankup plugin) {
         RankListInventory.plugin = plugin;
     }
-    public static Inventory rankListInv = Bukkit.createInventory(null,
-            (int) Math.ceil(Rankups.getRanks().size() / 9) * 9,
-            ChatColor.translateAlternateColorCodes('&',
-                    plugin.getConfig().getString("ranklist.name")));
+
 
     static {
         for (int i = 0; i <= Rankups.getRanks().size(); i++) {

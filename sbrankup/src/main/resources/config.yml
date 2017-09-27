@@ -2,3 +2,21 @@
 
 # Prefix of the plugin. Used in the console as well as displayed to players. You may use Bukkit Colour codes
 plugin-prefix: "&7[&3SBR&7] "
+
+
+# Configure your rank list GUI inventory
+
+# You can use the placeholder %rank% to represent the rank
+ranklist:
+  name: "&7Ranks" # Name of the inventory
+  locked-item: # Item used if the player does not have access to the rank
+    item-name: "&c&l%rank% &r&7[Locked]"
+    item-lore:
+      - "&7Rank %rank%"
+      - "&c&lYou cannot access this rank"
+    item-enchantments: # Provide enchantments to this item
+    # In the form of ENCHANTMENT_NAME;LEVEL
+    # e.g. ARROW_DAMAGE;1
+      - "ARROW_DAMAGE;1"
+
+
