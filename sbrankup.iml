@@ -24,6 +24,7 @@
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.avaje:ebean:2.8.1" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.persistence:persistence-api:1.0" level="project" />
     <orderEntry type="library" name="Maven: me.clip:placeholderapi:2.8.1" level="project" />
+    <orderEntry type="library" name="Maven: org.bstats:bstats-bukkit:1.2" level="project" />
     <orderEntry type="module" module-name="v1_12_R1" />
     <orderEntry type="library" name="Maven: org.spigotmc:spigot:1.12.1-R0.1-SNAPSHOT" level="project" />
     <orderEntry type="module" module-name="nms" />

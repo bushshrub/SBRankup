@@ -20,7 +20,8 @@ public class RankListInventory {
 
     static {
         for (int i = 0; i <= Rankups.getRanks().size(); i++) {
-            ItemStack obj = new ItemStack(Material.getMaterial(plugin.getConfig().getString("ranklist.unlockedItem")));
+            ItemStack obj = new ItemStack(Material.getMaterial(plugin.getConfig().getString("ranklist.unlocked-item,")));
+
         }
     }
 }

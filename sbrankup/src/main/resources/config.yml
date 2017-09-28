@@ -10,7 +10,9 @@ plugin-prefix: "&7[&3SBR&7] "
 ranklist:
   name: "&7Ranks" # Name of the inventory
   locked-item: # Item used if the player does not have access to the rank
-    item-name: "&c&l%rank% &r&7[Locked]"
+    item: "STAINED_GLASS_PANE"
+    item-data: 14
+    item-display-name: "&c&l%rank% &r&7[Locked]"
     item-lore:
       - "&7Rank %rank%"
       - "&c&lYou cannot access this rank"
@@ -18,5 +20,24 @@ ranklist:
     # In the form of ENCHANTMENT_NAME;LEVEL
     # e.g. ARROW_DAMAGE;1
       - "ARROW_DAMAGE;1"
+    hide_attributes: false
+    hide_enchantments: false
+  unlocked-item:
+    item: "STAINED_GLASS_PANE"
+    item-data: 13
+    item-display-name: "&a&l%rank% &r&7[Unlocked]"
+    item-lore:
+      - "&7Rank %rank%"
+      - "&at&lYou can access this rank"
+      item-enchantments: # Provide enchantments to this item
+      # In the form of ENCHANTMENT_NAME;LEVEL
+      # e.g. ARROW_DAMAGE;1
+      - "ARROW_DAMAGE;1"
+      hide_attributes: false
+      hide_enchantments: false
 
+
+# Enable bStats metrics or not?
+# You can read this on what data will be collected: https://bstats.org/getting-started
+enableMetrics: true
 

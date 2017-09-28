@@ -14,6 +14,7 @@ import net.derpz.sbrankup.config.Messages;
 import net.derpz.sbrankup.nms.*;
 
 import net.milkbowl.vault.chat.Chat;
+import org.bstats.bukkit.Metrics;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.ConsoleCommandSender;
@@ -85,6 +86,19 @@ public class SBRankup extends JavaPlugin {
         msgs.saveDefault();
 
         Rankups.saveDefault();
+
+
+        if (getConfig().getBoolean("enableMetrics")) {
+            console.sendMessage(PluginPrefix + ChatColor.GREEN.toString() +
+                    "You have chosen to enable metrics. Thank you for letting me know that you use this plugin!");
+            Metrics metrics = new Metrics(this);
+        } else {
+            console.sendMessage(PluginPrefix + ChatColor.RED.toString() +
+                    "You have chosen not to enable metrics. Metrics let me know that you support my plugin. However, " +
+                    "this is your own choice. Please consider enabling it as it does not collect any sensitive " +
+                    "information about your server.");
+        }
+
 
         getCommand("sbrankup").setExecutor(new RankupCommand(this));
         getCommand("sbsetrank").setExecutor(new SetRankCommand(this));
