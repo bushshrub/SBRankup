@@ -20,6 +20,7 @@ ranklist:
     # In the form of ENCHANTMENT_NAME;LEVEL
     # e.g. ARROW_DAMAGE;1
       - "ARROW_DAMAGE;1"
+    # These don't work yet
     hide_attributes: false
     hide_enchantments: false
   unlocked-item:
@@ -33,6 +34,8 @@ ranklist:
       # In the form of ENCHANTMENT_NAME;LEVEL
       # e.g. ARROW_DAMAGE;1
       - "ARROW_DAMAGE;1"
+
+      # These don't work yet
       hide_attributes: false
       hide_enchantments: false
 
