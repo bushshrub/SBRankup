@@ -62,6 +62,8 @@ public class RankListCommand implements CommandExecutor {
                             itemMeta.addEnchant(Enchantment.getByName(enchMt[0]), Integer.valueOf(enchMt[1]), true);
                         }
                     }
+                    hasPermsItemStack.setItemMeta(itemMeta);
+                    rankListInv.setItem(i, hasPermsItemStack);
 
 
 
@@ -73,6 +75,8 @@ public class RankListCommand implements CommandExecutor {
                 }
 
             }
+
+            ((Player) sender).openInventory(rankListInv);
         }
 
         return false;
