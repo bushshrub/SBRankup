@@ -4,8 +4,7 @@
     <list default="true" id="066ce462-4a41-43d6-9969-9155ac7d8812" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankListCommand.java" afterPath="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankListCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/listeners/RanklistListener.java" afterPath="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/listeners/RanklistListener.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sbrankup/src/main/resources/plugin.yml" afterPath="$PROJECT_DIR$/sbrankup/src/main/resources/plugin.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sbrankup/src/main/resources/config.yml" afterPath="$PROJECT_DIR$/sbrankup/src/main/resources/config.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/SBRankup/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,29 +35,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RankListCommand.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RankListCommand.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankListCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="194">
-              <caret line="54" column="30" lean-forward="true" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
+            <state relative-caret-position="126">
+              <caret line="56" column="87" lean-forward="false" selection-start-line="56" selection-start-column="87" selection-end-line="56" selection-end-column="87" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2867#2875#0" expanded="true" />
-                <element signature="e#4915#4923#0" expanded="true" />
-                <element signature="e#6300#6301#0" expanded="true" />
-                <element signature="e#6334#6335#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RanklistListener.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/listeners/RanklistListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="33" column="14" lean-forward="false" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#3033#3041#0" expanded="true" />
+                <element signature="e#5081#5089#0" expanded="true" />
+                <element signature="e#6466#6467#0" expanded="true" />
+                <element signature="e#6500#6501#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,21 +71,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="plugin.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sbrankup/src/main/resources/plugin.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sbrankup/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="50" lean-forward="true" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+              <caret line="1" column="50" lean-forward="false" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -175,13 +152,13 @@
         <option value="$PROJECT_DIR$/spigotdbg/run.cmd" />
         <option value="$PROJECT_DIR$/spigotdbg/copyTargetJar.cmd" />
         <option value="$PROJECT_DIR$/spigotdbg/plugins/SBRankup/config.yml" />
-        <option value="$PROJECT_DIR$/sbrankup/src/main/resources/config.yml" />
         <option value="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/SBRankup.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/sbrankup/pom.xml" />
         <option value="$PROJECT_DIR$/sbrankup/src/main/resources/plugin.yml" />
-        <option value="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankListCommand.java" />
         <option value="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/listeners/RanklistListener.java" />
+        <option value="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankListCommand.java" />
+        <option value="$PROJECT_DIR$/sbrankup/src/main/resources/config.yml" />
       </list>
     </option>
   </component>
@@ -528,7 +505,7 @@
       <workItem from="1506512385280" duration="2871000" />
       <workItem from="1506597443441" duration="7381000" />
       <workItem from="1506680167030" duration="1825000" />
-      <workItem from="1506819263323" duration="13424000" />
+      <workItem from="1506819263323" duration="13717000" />
     </task>
     <task id="LOCAL-00001" summary="fix a SMALL problem">
       <created>1505991953540</created>
@@ -649,11 +626,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506839278315</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Again, I was dumb and forgot to check for permissions">
+      <created>1506839656353</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1506839656353</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55297000" />
+    <option name="totallyTimeSpent" value="55590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -668,7 +652,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5042644" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09008529" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31744313" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -744,7 +728,8 @@
     <MESSAGE value="Dropped 1.8 support, done the rank list and things" />
     <MESSAGE value="Just a small QOL" />
     <MESSAGE value="I forgot to update the version" />
-    <option name="LAST_COMMIT_MESSAGE" value="I forgot to update the version" />
+    <MESSAGE value="Again, I was dumb and forgot to check for permissions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Again, I was dumb and forgot to check for permissions" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -997,14 +982,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sbrankup/src/main/resources/rankups.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/Placeholders.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1071,14 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sbrankup/src/main/resources/config.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="719">
-          <caret line="47" column="4" lean-forward="false" selection-start-line="47" selection-start-column="4" selection-end-line="47" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/SBRankup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -1087,18 +1056,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sbrankup/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
-          <caret line="1" column="50" lean-forward="true" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
+          <caret line="1" column="50" lean-forward="false" selection-start-line="1" selection-start-column="50" selection-end-line="1" selection-end-column="50" />
           <folding />
         </state>
       </provider>
@@ -1119,26 +1080,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankListCommand.java">
+    <entry file="file://$PROJECT_DIR$/sbrankup/src/main/resources/rankups.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="54" column="30" lean-forward="true" selection-start-line="54" selection-start-column="30" selection-end-line="54" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2867#2875#0" expanded="true" />
-            <element signature="e#4915#4923#0" expanded="true" />
-            <element signature="e#6300#6301#0" expanded="true" />
-            <element signature="e#6334#6335#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="19" column="32" lean-forward="false" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sbrankup/src/main/resources/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="36" column="11" lean-forward="false" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/listeners/RanklistListener.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="33" column="14" lean-forward="false" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="14" />
+        <state relative-caret-position="-34">
+          <caret line="4" column="16" lean-forward="false" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankListCommand.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="56" column="87" lean-forward="false" selection-start-line="56" selection-start-column="87" selection-end-line="56" selection-end-column="87" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#3033#3041#0" expanded="true" />
+            <element signature="e#5081#5089#0" expanded="true" />
+            <element signature="e#6466#6467#0" expanded="true" />
+            <element signature="e#6500#6501#0" expanded="true" />
           </folding>
         </state>
       </provider>

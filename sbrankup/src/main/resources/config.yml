@@ -34,7 +34,7 @@ ranklist:
     item-display-name: "&a&l%rank% &r&7[Unlocked]"
     item-lore:
       - "&7Rank %rank%"
-      - "&at&lYou can access this rank"
+      - "&a&lYou can access this rank"
     item-enchantments: # Provide enchantments to this item
       # In the form of ENCHANTMENT_NAME;LEVEL
       # e.g. ARROW_DAMAGE;1

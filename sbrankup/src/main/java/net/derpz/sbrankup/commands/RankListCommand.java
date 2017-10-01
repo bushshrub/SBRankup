@@ -52,6 +52,10 @@ public class RankListCommand implements CommandExecutor {
             String[] ranks = this.rus.getRanks().toArray(new String[this.rus.getRanks().size()]);
             for (int i = 0; i < this.rus.getRanks().size(); i++) {
                 if (sender.hasPermission("sbrankup.rank." + ranks[i])) {
+
+                    if (ranks[i].equals("lastrank")) {
+                        ranks[i] = rus.getRankups().getString("rankups.lastrank.name");
+                    }
                     Material hasPermsMaterial = Material.getMaterial(plugin.getConfig().getString("ranklist.unlocked-item.item"));
                     short itemData = (short) plugin.getConfig().getInt("ranklist.unlocked-item.item-data");
                     ItemStack hasPermsItemStack = new ItemStack(hasPermsMaterial, 1, itemData);
