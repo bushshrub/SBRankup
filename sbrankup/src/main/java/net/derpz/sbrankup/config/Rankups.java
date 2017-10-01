@@ -17,18 +17,18 @@ import java.util.*;
  */
 public class Rankups {
 
-    private static SBRankup plugin;
-    private static Set<String> ranks = new HashSet<>();
-    private static File rankupsYml = null;
-    private static FileConfiguration rankups = null;
+    private SBRankup plugin;
+    private Set<String> ranks = new HashSet<>();
+    private File rankupsYml = null;
+    private FileConfiguration rankups = null;
 
 
     public Rankups(SBRankup plugin) {
-        Rankups.plugin = plugin;
+        this.plugin = plugin;
     }
 
 
-    public static void reloadRankups() {
+    public void reloadRankups() {
         saveDefault();
 
         rankups = YamlConfiguration.loadConfiguration(rankupsYml);
@@ -54,21 +54,16 @@ public class Rankups {
 
     }
 
-    public static FileConfiguration getRankups() {
+    public FileConfiguration getRankups() {
         if (rankups == null) {
             reloadRankups();
         }
         return rankups;
     }
 
-    public static void saveDefault() {
+    public void saveDefault() {
         if (rankupsYml == null) {
-
-            try {
-                rankupsYml = new File(plugin.getDataFolder(), "rankups.yml");
-            } catch (NullPointerException ne) {
-                plugin.saveResource("rankups.yml", false);
-            }
+            rankupsYml = new File(plugin.getDataFolder(), "rankups.yml");
         }
 
         if (!rankupsYml.exists()) {
@@ -77,14 +72,14 @@ public class Rankups {
     }
 
 
-    public static Set<String> getRanks() {
+    public Set<String> getRanks() {
         if (rankups == null) {
             reloadRankups();
         }
         return ranks;
     }
 
-    public static String getRankOfPlayer(Player p) {
+    public String getRankOfPlayer(Player p) {
 
         // Reverse the ranklist so that we check if they have the last rank first, and go down
         // This is better because some servers have inheritance
@@ -93,7 +88,7 @@ public class Rankups {
         List<String> nr = new ArrayList<>(ranks);
         nr.sort(Collections.reverseOrder());
         LinkedHashSet<String> NrR = new LinkedHashSet<>(nr);
-        for (String rank: NrR) {
+        for (String rank : NrR) {
             if (p.hasPermission("sbrankup.rank." + rank)) {
                 return rank;
             }
@@ -101,8 +96,8 @@ public class Rankups {
         return "";
     }
 
-    public static String getNextRank(Player p) {
-        return getRankups().getString("rankups." + getRankOfPlayer(p) + ".nextrank" );
+    public String getNextRank(Player p) {
+        return getRankups().getString("rankups." + getRankOfPlayer(p) + ".nextrank");
     }
 
 }

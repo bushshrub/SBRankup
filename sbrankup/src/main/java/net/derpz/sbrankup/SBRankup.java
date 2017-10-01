@@ -4,9 +4,9 @@ package net.derpz.sbrankup;
  * Created by Robert on 06-Sep-17.
  */
 
+import net.derpz.sbrankup.commands.RankListCommand;
 import net.derpz.sbrankup.commands.RankupCommand;
 import net.derpz.sbrankup.commands.SBAdminCommand;
-import net.derpz.sbrankup.commands.SetRankCommand;
 
 import net.derpz.sbrankup.config.Rankups;
 import net.derpz.sbrankup.config.Messages;
@@ -15,7 +15,6 @@ import net.derpz.sbrankup.nms.*;
 
 import net.milkbowl.vault.chat.Chat;
 import org.bstats.bukkit.Metrics;
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.Plugin;
@@ -34,9 +33,9 @@ public class SBRankup extends JavaPlugin {
 
     private ActionBar actionbar;
     private JsonMessage jsonMessage;
+
     @Override
     public void onEnable() {
-
 
 
         PluginManager plmgr = getServer().getPluginManager();
@@ -69,7 +68,7 @@ public class SBRankup extends JavaPlugin {
 
         if (!setupChat()) {
             console.sendMessage(PluginPrefix + ChatColor.RED.toString() +
-            "Can't link Vault for chat! Disabling plugin.");
+                    "Can't link Vault for chat! Disabling plugin.");
             plmgr.disablePlugin(this);
         }
 
@@ -85,7 +84,8 @@ public class SBRankup extends JavaPlugin {
         Messages msgs = new Messages(this);
         msgs.saveDefault();
 
-        Rankups.saveDefault();
+        Rankups rus = new Rankups(this);
+        rus.saveDefault();
 
 
         if (getConfig().getBoolean("enableMetrics")) {
@@ -101,7 +101,7 @@ public class SBRankup extends JavaPlugin {
 
 
         getCommand("sbrankup").setExecutor(new RankupCommand(this));
-        getCommand("sbsetrank").setExecutor(new SetRankCommand(this));
+        getCommand("sbranklist").setExecutor(new RankListCommand(this));
         getCommand("sbadmin").setExecutor(new SBAdminCommand(this));
         getCommand("sbadmin").setTabCompleter(new SBAdminCommand(this));
 
@@ -139,7 +139,7 @@ public class SBRankup extends JavaPlugin {
         }
 
         getServer().getConsoleSender().sendMessage(PluginPrefix + ChatColor.AQUA.toString() +
-        "Now attempting NMS hook for version " + version);
+                "Now attempting NMS hook for version " + version);
 
 
         switch (version) {
@@ -173,11 +173,19 @@ public class SBRankup extends JavaPlugin {
         return inputText.replace(placeholder, textToReplaceIn);
     }
 
-    public Permission getPerms() { return perms; }
+    public Permission getPerms() {
+        return perms;
+    }
 
-    public Chat getChat() { return chat; }
+    public Chat getChat() {
+        return chat;
+    }
 
-    public String getPluginPrefix() { return PluginPrefix; }
+    public String getPluginPrefix() {
+        return PluginPrefix;
+    }
 
-    public ActionBar getActionbar() { return actionbar; }
+    public ActionBar getActionbar() {
+        return actionbar;
+    }
 }

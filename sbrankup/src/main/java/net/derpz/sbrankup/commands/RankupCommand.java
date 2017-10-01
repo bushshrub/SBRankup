@@ -20,13 +20,14 @@ import java.util.*;
 /**
  * Created by xiurobert on 06-Sep-17.
  */
-public class RankupCommand implements CommandExecutor{
+public class RankupCommand implements CommandExecutor {
 
     private final SBRankup plugin;
 
 
     /**
      * RankupCommand initialiser
+     *
      * @param plugin SBRankup plugin
      */
     public RankupCommand(SBRankup plugin) {
@@ -50,11 +51,12 @@ public class RankupCommand implements CommandExecutor{
                     "inputs to this command!");
             return true;
         }
-
+        Rankups rus = new Rankups(plugin);
         UUID uuid = ((Player) sender).getUniqueId();
         ASkyBlockAPI asbapi = ASkyBlockAPI.getInstance();
 
-        String currRank = Rankups.getRankOfPlayer((Player) sender);
+
+        String currRank = rus.getRankOfPlayer((Player) sender);
 
         if (!sender.hasPermission("sbrankup.rank." + currRank)) {
             sender.sendMessage(plugin.getPluginPrefix() + msgs.getAltColourCodedMsg("noRankDetected"));
@@ -64,14 +66,14 @@ public class RankupCommand implements CommandExecutor{
         if (currRank.equals("lastrank")) {
             sender.sendMessage(plugin.getPluginPrefix() + msgs.getAltColourCodedMsg("lastRank"));
         }
-        String nextRank = Rankups.getNextRank((Player) sender);
+        String nextRank = rus.getNextRank((Player) sender);
         // check if player has enough levels to rankup
 
-        if (Rankups.getRankups().getInt("rankups." + nextRank + ".cost")
+        if (rus.getRankups().getInt("rankups." + nextRank + ".cost")
                 <= asbapi.getIslandLevel(uuid)) {
 
             // run the rankup actions
-            List<String> actions = Rankups.getRankups().getStringList(
+            List<String> actions = rus.getRankups().getStringList(
                     "rankups." + currRank + ".actions");
 
             for (String action : actions) {
@@ -158,14 +160,14 @@ public class RankupCommand implements CommandExecutor{
         } else {
 
             int missingLvls = asbapi.getIslandLevel(uuid) -
-                    Rankups.getRankups().getInt("rankups." + nextRank + ".cost");
+                    rus.getRankups().getInt("rankups." + nextRank + ".cost");
 
             String msgToSend = plugin.replacePlaceholder("%curr_level%",
                     asbapi.getIslandLevel(uuid) + "",
                     msgs.getAltColourCodedMsg("notEnoughLevels"));
 
             msgToSend = plugin.replacePlaceholder(
-                    "%levels_needed%", Rankups.getRankups().getInt("rankups." +
+                    "%levels_needed%", rus.getRankups().getInt("rankups." +
                             nextRank + ".cost")
                             + "", msgToSend);
             msgToSend = plugin.replacePlaceholder("%more_levels%", missingLvls + "",
@@ -175,10 +177,7 @@ public class RankupCommand implements CommandExecutor{
         }
 
 
-
-
         return true;
-
 
 
     }

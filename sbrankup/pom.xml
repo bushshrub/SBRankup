@@ -15,8 +15,6 @@
     <version>1.0.3</version>
 
 
-
-
     <build>
         <directory>../target</directory>
         <finalName>SBRankup</finalName>
@@ -178,7 +176,6 @@
             <version>v1_9_R1</version>
         </dependency>
     </dependencies>
-
 
 
 </project>

@@ -14,15 +14,15 @@ import java.io.UnsupportedEncodingException;
  * Created by xiurobert on 18-Sep-17.
  */
 public class Messages {
-    
+
     private SBRankup plugin;
     private File messages = null;
     private FileConfiguration msgs = null;
-    
+
     public Messages(SBRankup plugin) {
         this.plugin = plugin;
     }
-    
+
     public void saveDefault() {
         if (messages == null) {
             messages = new File(plugin.getDataFolder(), "messages_en.yml");
@@ -31,7 +31,7 @@ public class Messages {
             plugin.saveResource("messages_en.yml", false);
         }
     }
-    
+
     public FileConfiguration getMessages() {
         if (msgs == null) {
             reloadmsgs();
@@ -39,7 +39,7 @@ public class Messages {
         return msgs;
     }
 
-    public String getAltColourCodedMsg(String path){
+    public String getAltColourCodedMsg(String path) {
         if (msgs == null) {
             reloadmsgs();
         }
@@ -65,6 +65,6 @@ public class Messages {
 
 
     }
-    
-    
+
+
 }
