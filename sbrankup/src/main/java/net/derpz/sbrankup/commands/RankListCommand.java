@@ -1,6 +1,5 @@
 package net.derpz.sbrankup.commands;
 
-import net.derpz.sbrankup.Placeholders;
 import net.derpz.sbrankup.SBRankup;
 
 
@@ -12,12 +11,14 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
-import org.bukkit.enchantments.EnchantmentWrapper;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.material.MaterialData;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 /**
  * Created by xiurobert on 08-Sep-17.
@@ -26,13 +27,13 @@ public class RankListCommand implements CommandExecutor {
 
     private SBRankup plugin;
     private Rankups rus;
-    public Inventory rankListInv;
+    private static Inventory rankListInv;
 
     public RankListCommand(SBRankup plugin) {
         this.plugin = plugin;
         this.rus = new Rankups(plugin);
-        this.rankListInv = Bukkit.createInventory(null,
-                (int) Math.ceil(this.rus.getRanks().size() / 9) * 9,
+        rankListInv = Bukkit.createInventory(null,
+                (int) Math.ceil((double) this.rus.getRanks().size() / 9) * 9,
                 ChatColor.translateAlternateColorCodes('&',
                         plugin.getConfig().getString("ranklist.name")));
     }
@@ -45,19 +46,28 @@ public class RankListCommand implements CommandExecutor {
             sender = (Player) sender;
 
             String[] ranks = this.rus.getRanks().toArray(new String[this.rus.getRanks().size()]);
-            for (int i = 0; i <= this.rus.getRanks().size(); i++) {
+            for (int i = 0; i < this.rus.getRanks().size(); i++) {
                 if (sender.hasPermission("sbrankup.rank." + ranks[i])) {
                     Material hasPermsMaterial = Material.getMaterial(plugin.getConfig().getString("ranklist.unlocked-item.item"));
-                    ItemStack hasPermsItemStack = new ItemStack
-                            (hasPermsMaterial, 1, (short)
-                    plugin.getConfig().getInt("ranklist.unlocked-item.item-data"));
+                    short itemData = (short) plugin.getConfig().getInt("ranklist.unlocked-item.item-data");
+                    ItemStack hasPermsItemStack = new ItemStack(hasPermsMaterial, 1, itemData);
 
                     ItemMeta itemMeta = hasPermsItemStack.getItemMeta();
                     if (plugin.getConfig().getString("ranklist.unlocked-item.item-display-name") != null) {
-                        itemMeta.setDisplayName(plugin.getConfig().getString("ranklist.unlocked-item.item-display-name"));
+                        itemMeta.setDisplayName(
+                                ChatColor.translateAlternateColorCodes('&',
+                                        plugin.replacePlaceholder("%rank%", ranks[i],
+                                                plugin.getConfig().getString("ranklist.unlocked-item.item-display-name") )
+                                        ));
                     }
                     if (plugin.getConfig().getStringList("ranklist.unlocked-item.item-lore") != null) {
-                        itemMeta.setLore(plugin.getConfig().getStringList("ranklist.unlocked-item.item-lore"));
+
+                        List<String> translated = new ArrayList<String>();
+                        for (String itemLore : plugin.getConfig().getStringList("ranklist.unlocked-item.item-lore")) {
+                            translated.add(ChatColor.translateAlternateColorCodes('&',
+                                    plugin.replacePlaceholder("%rank%", ranks[i], itemLore)));
+                        }
+                        itemMeta.setLore(translated);
                     }
 
                     if (plugin.getConfig().getStringList("ranklist.unlocked-item.enchantments") != null) {
@@ -72,17 +82,26 @@ public class RankListCommand implements CommandExecutor {
 
                 } else {
                     Material noPermsMaterial = Material.getMaterial(plugin.getConfig().getString("ranklist.locked-item.item"));
-                    ItemStack noPermsStack = new ItemStack(noPermsMaterial, 1, (short)
-                            plugin.getConfig().getInt("ranklist.locked-item.item-data"));
+                    Short itemData = (short) plugin.getConfig().getInt("ranklist.locked-item.item-data");
+                    ItemStack noPermsStack = new ItemStack(noPermsMaterial, 1, itemData);
 
                     ItemMeta itemMeta = noPermsStack.getItemMeta();
 
                     if (plugin.getConfig().getString("ranklist.locked-item.item-display-name") != null) {
-                        itemMeta.setDisplayName(plugin.getConfig().getString("ranklist.unlocked-item.item-display-name"));
+                        itemMeta.setDisplayName(
+                                ChatColor.translateAlternateColorCodes('&',
+                                        plugin.replacePlaceholder("%rank%", ranks[i],
+                                                plugin.getConfig().getString("ranklist.locked-item.item-display-name") )));
                     }
 
                     if (plugin.getConfig().getStringList("ranklist.locked-item.item-lore") != null) {
-                        itemMeta.setLore(plugin.getConfig().getStringList("ranklist.locked-item.item-lore"));
+                        List<String> translated = new ArrayList<String>();
+                        for (String itemLore : plugin.getConfig().getStringList("ranklist.locked-item.item-lore")) {
+                            translated.add(ChatColor.translateAlternateColorCodes('&', plugin.replacePlaceholder(
+                                    "%rank%", ranks[i], itemLore
+                            )));
+                        }
+                        itemMeta.setLore(translated);
                     }
 
 
@@ -103,5 +122,9 @@ public class RankListCommand implements CommandExecutor {
         }
 
         return false;
+    }
+
+    public Inventory getRankListInv() {
+        return rankListInv;
     }
 }

@@ -11,6 +11,7 @@ import net.derpz.sbrankup.commands.SBAdminCommand;
 import net.derpz.sbrankup.config.Rankups;
 import net.derpz.sbrankup.config.Messages;
 
+import net.derpz.sbrankup.listeners.RanklistListener;
 import net.derpz.sbrankup.nms.*;
 
 import net.milkbowl.vault.chat.Chat;
@@ -105,6 +106,7 @@ public class SBRankup extends JavaPlugin {
         getCommand("sbadmin").setExecutor(new SBAdminCommand(this));
         getCommand("sbadmin").setTabCompleter(new SBAdminCommand(this));
 
+        plmgr.registerEvents(new RanklistListener(this), this);
         //getCommand("sblistranks").setExecutor(new RankListCommand(this)); //TODO GUI for ranklist
 
 

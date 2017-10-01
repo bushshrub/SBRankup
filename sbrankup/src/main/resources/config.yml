@@ -20,12 +20,17 @@ ranklist:
     # In the form of ENCHANTMENT_NAME;LEVEL
     # e.g. ARROW_DAMAGE;1
       - "ARROW_DAMAGE;1"
-    # These don't work yet
+    ##### These things below don't work yet #####
     hide_attributes: false
     hide_enchantments: false
+
+    # Run commands as player or console when clicked. Use %player% for the players username, and %rank% for the rank
+    # To be done
+    run_commands_on_click:
+      - "[player] warp %rank%"
   unlocked-item:
     item: "STAINED_GLASS_PANE"
-    item-data: 13
+    item-data: 5
     item-display-name: "&a&l%rank% &r&7[Unlocked]"
     item-lore:
       - "&7Rank %rank%"
@@ -35,9 +40,11 @@ ranklist:
       # e.g. ARROW_DAMAGE;1
       - "ARROW_DAMAGE;1"
 
-      # These don't work yet
+    ##### These things below don't work yet #####
     hide_attributes: false
     hide_enchantments: false
+
+    run_commands_on_click:
 
 
 # Enable bStats metrics or not?
