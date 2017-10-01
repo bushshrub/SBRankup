@@ -119,6 +119,11 @@ public class RankListCommand implements CommandExecutor {
             }
 
             ((Player) sender).openInventory(rankListInv);
+        } else {
+            for (String rank : rus.getRanks()) {
+                sender.sendMessage(plugin.getPluginPrefix() + ChatColor.AQUA + " " + rank);
+            }
+
         }
 
         return false;
