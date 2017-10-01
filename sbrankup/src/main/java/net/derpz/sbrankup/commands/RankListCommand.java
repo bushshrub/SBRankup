@@ -47,7 +47,6 @@ public class RankListCommand implements CommandExecutor {
             if (!sender.hasPermission("sbrankup.ranklist")) {
                 sender.sendMessage(plugin.getPluginPrefix() + ChatColor.RED + "You do not have permission for this");
             }
-            sender = (Player) sender;
 
             String[] ranks = this.rus.getRanks().toArray(new String[this.rus.getRanks().size()]);
             for (int i = 0; i < this.rus.getRanks().size(); i++) {
@@ -70,7 +69,7 @@ public class RankListCommand implements CommandExecutor {
                     }
                     if (plugin.getConfig().getStringList("ranklist.unlocked-item.item-lore") != null) {
 
-                        List<String> translated = new ArrayList<String>();
+                        List<String> translated = new ArrayList<>();
                         for (String itemLore : plugin.getConfig().getStringList("ranklist.unlocked-item.item-lore")) {
                             translated.add(ChatColor.translateAlternateColorCodes('&',
                                     plugin.replacePlaceholder("%rank%", ranks[i], itemLore)));
@@ -103,7 +102,7 @@ public class RankListCommand implements CommandExecutor {
                     }
 
                     if (plugin.getConfig().getStringList("ranklist.locked-item.item-lore") != null) {
-                        List<String> translated = new ArrayList<String>();
+                        List<String> translated = new ArrayList<>();
                         for (String itemLore : plugin.getConfig().getStringList("ranklist.locked-item.item-lore")) {
                             translated.add(ChatColor.translateAlternateColorCodes('&', plugin.replacePlaceholder(
                                     "%rank%", ranks[i], itemLore

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="066ce462-4a41-43d6-9969-9155ac7d8812" name="Default" comment="">
+    <list default="true" id="066ce462-4a41-43d6-9969-9155ac7d8812" name="Default" comment="Get the name of the last rank displaye">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankListCommand.java" afterPath="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankListCommand.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sbrankup/src/main/resources/config.yml" afterPath="$PROJECT_DIR$/sbrankup/src/main/resources/config.yml" />
     </list>
     <ignored path="$PROJECT_DIR$/SBRankup/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,14 +37,12 @@
       <file leaf-file-name="RankListCommand.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankListCommand.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="56" column="87" lean-forward="false" selection-start-line="56" selection-start-column="87" selection-end-line="56" selection-end-column="87" />
+            <state relative-caret-position="716">
+              <caret line="135" column="9" lean-forward="true" selection-start-line="135" selection-start-column="9" selection-end-line="135" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#3033#3041#0" expanded="true" />
-                <element signature="e#5081#5089#0" expanded="true" />
-                <element signature="e#6466#6467#0" expanded="true" />
-                <element signature="e#6500#6501#0" expanded="true" />
+                <element signature="e#6416#6417#0" expanded="true" />
+                <element signature="e#6450#6451#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -157,8 +154,8 @@
         <option value="$PROJECT_DIR$/sbrankup/pom.xml" />
         <option value="$PROJECT_DIR$/sbrankup/src/main/resources/plugin.yml" />
         <option value="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/listeners/RanklistListener.java" />
-        <option value="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankListCommand.java" />
         <option value="$PROJECT_DIR$/sbrankup/src/main/resources/config.yml" />
+        <option value="$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankListCommand.java" />
       </list>
     </option>
   </component>
@@ -505,7 +502,7 @@
       <workItem from="1506512385280" duration="2871000" />
       <workItem from="1506597443441" duration="7381000" />
       <workItem from="1506680167030" duration="1825000" />
-      <workItem from="1506819263323" duration="13717000" />
+      <workItem from="1506819263323" duration="13789000" />
     </task>
     <task id="LOCAL-00001" summary="fix a SMALL problem">
       <created>1505991953540</created>
@@ -633,11 +630,18 @@
       <option name="project" value="LOCAL" />
       <updated>1506839656353</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Get the name of the last rank displaye">
+      <created>1506839962461</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1506839962461</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55590000" />
+    <option name="totallyTimeSpent" value="55662000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -653,7 +657,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09008529" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31744313" sideWeight="0.49573562" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.49573562" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2803838" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -703,9 +707,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
     </layout-to-restore>
   </component>
-  <component name="ToolsProjectConfig">
-    <afterCommitToolId>Tool_External Tools_Maven build project</afterCommitToolId>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -729,7 +730,8 @@
     <MESSAGE value="Just a small QOL" />
     <MESSAGE value="I forgot to update the version" />
     <MESSAGE value="Again, I was dumb and forgot to check for permissions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Again, I was dumb and forgot to check for permissions" />
+    <MESSAGE value="Get the name of the last rank displaye" />
+    <option name="LAST_COMMIT_MESSAGE" value="Get the name of the last rank displaye" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1114,14 +1116,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sbrankup/src/main/java/net/derpz/sbrankup/commands/RankListCommand.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="56" column="87" lean-forward="false" selection-start-line="56" selection-start-column="87" selection-end-line="56" selection-end-column="87" />
+        <state relative-caret-position="716">
+          <caret line="135" column="9" lean-forward="true" selection-start-line="135" selection-start-column="9" selection-end-line="135" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#3033#3041#0" expanded="true" />
-            <element signature="e#5081#5089#0" expanded="true" />
-            <element signature="e#6466#6467#0" expanded="true" />
-            <element signature="e#6500#6501#0" expanded="true" />
+            <element signature="e#6416#6417#0" expanded="true" />
+            <element signature="e#6450#6451#0" expanded="true" />
           </folding>
         </state>
       </provider>
