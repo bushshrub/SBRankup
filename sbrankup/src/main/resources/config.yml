@@ -30,14 +30,14 @@ ranklist:
     item-lore:
       - "&7Rank %rank%"
       - "&at&lYou can access this rank"
-      item-enchantments: # Provide enchantments to this item
+    item-enchantments: # Provide enchantments to this item
       # In the form of ENCHANTMENT_NAME;LEVEL
       # e.g. ARROW_DAMAGE;1
       - "ARROW_DAMAGE;1"
 
       # These don't work yet
-      hide_attributes: false
-      hide_enchantments: false
+    hide_attributes: false
+    hide_enchantments: false
 
 
 # Enable bStats metrics or not?

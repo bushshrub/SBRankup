@@ -63,7 +63,12 @@ public class Rankups {
 
     public static void saveDefault() {
         if (rankupsYml == null) {
-            rankupsYml = new File(plugin.getDataFolder(), "rankups.yml");
+
+            try {
+                rankupsYml = new File(plugin.getDataFolder(), "rankups.yml");
+            } catch (NullPointerException ne) {
+                plugin.saveResource("rankups.yml", false);
+            }
         }
 
         if (!rankupsYml.exists()) {
