@@ -11,11 +11,6 @@ commands:
     permission: sbrankup.rankup
     #permission-message: You are missing the permission <permission>!
 
-  sbsetrank:
-    description: Sets the rank of a player.
-    usage: /<command> [player] [rank]
-    permission: sbrankup.setrank
-    #permission-message:
   sbranklist:
     description: Views all the ranks the player has access to
     usage: /<command>
@@ -23,6 +18,7 @@ commands:
   sbadmin:
     description: SBRankup administration utility
     usage: /<command> [action] [arguments]
+    permission: sbrankup.admin
 
 permissions:
   sbrankup.player.*:

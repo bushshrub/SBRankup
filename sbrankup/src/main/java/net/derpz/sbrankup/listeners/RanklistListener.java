@@ -31,7 +31,7 @@ public class RanklistListener implements Listener{
 
         if (inv.getName().equals(new RankListCommand(plugin).getRankListInv().getName())) {
             event.setCancelled(true);
-            player.closeInventory();
+            //player.closeInventory();
 
             // TODO: Implement commands
         }

@@ -43,6 +43,10 @@ public class RankListCommand implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 
         if (sender instanceof Player) {
+
+            if (!sender.hasPermission("sbrankup.ranklist")) {
+                sender.sendMessage(plugin.getPluginPrefix() + ChatColor.RED + "You do not have permission for this");
+            }
             sender = (Player) sender;
 
             String[] ranks = this.rus.getRanks().toArray(new String[this.rus.getRanks().size()]);
@@ -119,14 +123,15 @@ public class RankListCommand implements CommandExecutor {
             }
 
             ((Player) sender).openInventory(rankListInv);
+
+            return true;
         } else {
             for (String rank : rus.getRanks()) {
                 sender.sendMessage(plugin.getPluginPrefix() + ChatColor.AQUA + " " + rank);
             }
-
+            return true;
         }
 
-        return false;
     }
 
     public Inventory getRankListInv() {
