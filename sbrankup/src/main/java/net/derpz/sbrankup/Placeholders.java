@@ -26,7 +26,7 @@ public class Placeholders extends EZPlaceholderHook {
         Rankups rus = new Rankups(plugin);
 
         switch (identifier) {
-            case "rank":
+            case "current_rank":
                 return rus.getRankOfPlayer(p);
             case "next_rank":
                 return rus.getNextRank(p);
